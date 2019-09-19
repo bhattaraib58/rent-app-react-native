@@ -1,0 +1,1 @@
+export const companyLogo=require('./img/company-logo.png');
