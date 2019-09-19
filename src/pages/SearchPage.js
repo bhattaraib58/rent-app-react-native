@@ -71,8 +71,7 @@ export class SearchPage extends Component {
 
     render() {
         return (
-            <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-                <View style={{flex: 1 }}>
+                <View style={{flex: 1 }} onStartShouldSetResponder={() => Keyboard.dismiss()}>
                     <View style={this.styles.toolbar}>
                         <Image source={companyLogo} style={this.styles.logo} />
                         <TextInput
@@ -83,13 +82,11 @@ export class SearchPage extends Component {
                         {
                             this.state.isDataLoading ?
                                 <ActivityIndicator size="large" color="#00ff00" /> :
-                                <ViewFlat flatData={this.state.flatData}></ViewFlat>
+                                <ViewFlat flatData={this.state.flatData} {...this.props}></ViewFlat>
                         }
                     </SafeAreaView>
                 </View>
-            </TouchableWithoutFeedback>
-
-        )
+        );
     }
 
     onActionSelected() {
