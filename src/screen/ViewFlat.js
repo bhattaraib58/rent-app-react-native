@@ -7,19 +7,23 @@ import {
     Image,
     TouchableNativeFeedback,
     TouchableWithoutFeedback
-} from 'react-native'
+} from 'react-native';
+
+import CardView from 'react-native-cardview';
 
 
 
 const styles = StyleSheet.create(
     {
+        card:{
+            padding:5
+        },
         container: {
             marginTop: 10,
             marginBottom: 40,
         },
         flatContent: {
             margin: 10,
-            marginBottom: 20,
         },
         image: {
             backgroundColor: 'white',
@@ -49,7 +53,7 @@ const styles = StyleSheet.create(
             padding: 5,
             margin: 3,
             borderRadius: 10,
-            paddingHorizontal:10
+            paddingHorizontal: 10
         }
     }
 );
@@ -63,36 +67,46 @@ export class ViewFlat extends Component {
 
     showFlatInfo({ flat }) {
         return (
+
             <View style={styles.flatContent} >
-                <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate(
-                    'Details',
-                    {
-                        flatInfo: flat.item
-                    })}>
-                    <Image source={{ uri: flat.item.image }} style={styles.image} />
-                </TouchableWithoutFeedback>
-                <Text style={styles.price}>
-                    {flat.item.Currency} {flat.item.priceMin} - {flat.item.priceMax}/{flat.item.payType}
-                </Text>
 
-                <View style={{ flexDirection: 'row' }}>
-                    <Image source={require("../img/land.png")} style={styles.iconSize} />
-                    <Text>{flat.item.area}</Text>
+            <CardView
+                cardElevation={3}
+                cardMaxElevation={3}
+                cornerRadius={5} style={styles.card}>
 
-                    <Image source={require("../img/location.png")} style={styles.iconSize} />
-                    <Text> {flat.item.location}</Text>
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate(
+                        'Details',
+                        {
+                            flatInfo: flat.item
+                        })}>
+                        <Image source={{ uri: flat.item.image }} style={styles.image} />
+                    </TouchableWithoutFeedback>
+                    <Text style={styles.price}>
+                        {flat.item.Currency} {flat.item.priceMin} - {flat.item.priceMax}/{flat.item.payType}
+                    </Text>
+
+                    <View style={{ flexDirection: 'row' }}>
+                        <Image source={require("../img/land.png")} style={styles.iconSize} />
+                        <Text>{flat.item.area}</Text>
+
+                        <Image source={require("../img/location.png")} style={styles.iconSize} />
+                        <Text> {flat.item.location}</Text>
+                    </View>
+
+                    <View style={styles.tagsContainer}>
+                        {
+                            flat.item.tags.map((tag, key) => {
+                                return (
+                                    <Text key={key} style={styles.tags}>{tag}</Text>
+                                )
+                            })
+                        }
+                    </View>
+
+            </CardView>
                 </View>
 
-                <View style={styles.tagsContainer}>
-                    {
-                        flat.item.tags.map((tag, key) => {
-                            return (
-                                <Text key={key} style={styles.tags}>{tag}</Text>
-                            )
-                        })
-                    }
-                </View>
-            </View>
         );
     }
 

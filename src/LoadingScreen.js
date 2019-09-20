@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, Animated } from 'react-native';
 import { companyLogo } from './Constants';
-import { debuggerStatement } from '@babel/types';
 
 export class LoadingScreen extends Component {
     constructor(props) {

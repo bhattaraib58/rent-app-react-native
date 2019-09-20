@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import SearchPage from './pages/SearchPage';
-import LoadingScreen from './LoadingScreen';
-import { createAppContainer } from 'react-navigation';
-import ViewFlatDetails from './pages/ViewFlatDetails';
 import {createStackNavigator} from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
+
+import SearchPage from './screen/SearchPage';
+import ViewFlatDetails from './screen/ViewFlatDetails';
+import LoadingScreen from './LoadingScreen';
 
 
 const RootStack = createStackNavigator(
