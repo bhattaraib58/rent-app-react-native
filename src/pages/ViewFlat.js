@@ -6,6 +6,7 @@ import {
     FlatList,
     Image,
     TouchableNativeFeedback,
+    TouchableWithoutFeedback
 } from 'react-native'
 
 
@@ -17,7 +18,7 @@ const styles = StyleSheet.create(
             marginBottom: 40,
         },
         flatContent: {
-            margin: 5,
+            margin: 10,
             marginBottom: 20,
         },
         image: {
@@ -25,14 +26,6 @@ const styles = StyleSheet.create(
             borderRadius: 10,
             width: '100%',
             height: 200
-        },
-        tags: {
-            backgroundColor: '#d2d2d2',
-            fontSize: 18,
-            fontWeight: 'bold',
-            padding: 5,
-            margin: 3,
-            borderRadius: 10
         },
         price: {
             fontWeight: 'bold',
@@ -48,6 +41,15 @@ const styles = StyleSheet.create(
             flexDirection: "row",
             flexWrap: 'wrap',
             marginVertical: 10
+        },
+        tags: {
+            backgroundColor: '#d2d2d2',
+            fontSize: 12,
+            fontWeight: 'bold',
+            padding: 5,
+            margin: 3,
+            borderRadius: 10,
+            paddingHorizontal:10
         }
     }
 );
@@ -59,16 +61,16 @@ export class ViewFlat extends Component {
 
 
 
-    FlatInfo({ flat }) {
+    showFlatInfo({ flat }) {
         return (
             <View style={styles.flatContent} >
-                <View onStartShouldSetResponder={() => this.props.navigation.navigate(
+                <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate(
                     'Details',
                     {
                         flatInfo: flat.item
                     })}>
                     <Image source={{ uri: flat.item.image }} style={styles.image} />
-                </View>
+                </TouchableWithoutFeedback>
                 <Text style={styles.price}>
                     {flat.item.Currency} {flat.item.priceMin} - {flat.item.priceMax}/{flat.item.payType}
                 </Text>
@@ -99,7 +101,7 @@ export class ViewFlat extends Component {
             <FlatList
                 data={this.props.flatData}
                 keyExtractor={flat => flat.id.toString()}
-                renderItem={(flat) => this.FlatInfo({ flat })}
+                renderItem={(flat) => this.showFlatInfo({ flat })}
                 showsVerticalScrollIndicator={false}
                 style={styles.container} />
         )

@@ -16,14 +16,6 @@ const styles = StyleSheet.create(
             height: 400,
             marginBottom:30,
         },
-        tags: {
-            backgroundColor: '#d2d2d2',
-            fontSize: 18,
-            fontWeight: 'bold',
-            padding: 5,
-            margin: 3,
-            borderRadius: 10
-        },
         price: {
             fontWeight: 'bold',
             fontSize: 20,
@@ -39,6 +31,15 @@ const styles = StyleSheet.create(
             flexWrap: 'wrap',
             marginVertical: 10,
             marginBottom:10
+        },
+        tags: {
+            backgroundColor: '#d2d2d2',
+            fontSize: 12,
+            fontWeight: 'bold',
+            padding: 5,
+            margin: 3,
+            borderRadius: 10,
+            paddingHorizontal:10
         },
         flatInfo:{
             fontSize:16,
