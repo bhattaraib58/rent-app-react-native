@@ -1,8 +1,8 @@
 import * as LoginAction from './loginActions';
-import * as FlatAction from './flatActions';
+import {flatInfoRequest,flatInfoResponse,flatInfoFailed} from './flatActions';
 
-export const ActionCreators=Object.assign(
-    {},
-    LoginAction,
-    FlatAction
-);
+export const ActionCreators = {
+    flatInfoRequest:flatInfoRequest,
+    flatInfoResponse:flatInfoResponse,
+    flatInfoFailed:flatInfoFailed,
+};

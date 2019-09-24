@@ -17,6 +17,14 @@ export class HomeView extends Component {
 
     static navigationOptions = { header: null };
 
+    constructor(props) {
+        super(props)
+
+        this.state = {
+
+        }
+        this.props.flatInfoRequest();
+    }
     render() {
         console.warn(this.props);
         return (

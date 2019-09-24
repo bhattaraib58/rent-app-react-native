@@ -1,10 +1,15 @@
 import ApiConstants from "../api/APiConstants";
 import * as FlatInfoActions from "../actions/flatActions";
+import {put} from 'redux-saga/effects'
 
 export default function* getFlatInfoAsync() {
-    const json = yield fetch(ApiConstants.BASE_URL + ApiConstants.FLAT)
+    try{
+        const result = yield fetch(ApiConstants.BASE_URL + ApiConstants.FLAT)
         .then(response => response.json());
-    console.log(json);
-
-    yield put(FlatInfoActions.flatInfoResponse(json));
+        yield put(FlatInfoActions.flatInfoResponse(result));  
+    }
+    catch(error)
+    {
+        yield put(FlatInfoActions.flatInfoFailed(error));  
+    }
 }
