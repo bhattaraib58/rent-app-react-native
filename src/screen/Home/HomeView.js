@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { companyLogo } from '../../Constants.js';
+import { companyLogo } from '../../Constants/image';
 import {
     View,
     BackHandler,
@@ -26,7 +26,6 @@ export class HomeView extends Component {
         this.props.flatInfoRequest();
     }
     render() {
-        console.warn(this.props);
         return (
             <View style={{ flex: 1 }} onStartShouldSetResponder={() => Keyboard.dismiss()}>
                 <View style={styles.toolbar}>
@@ -35,13 +34,13 @@ export class HomeView extends Component {
                         style={styles.search}
                         placeholder='Search' />
                 </View>
-                {/* < SafeAreaView style={this.state.isDataLoading ? this.styles.mainContent : null}>
+                < SafeAreaView style={this.props.flat.isLoading ? styles.mainContent : null}>
                     {
-                        this.state.isDataLoading ?
+                        this.props.flat.isLoading  ?
                             <ActivityIndicator size="large" color="#00ff00" /> :
-                            <ViewFlat flatData={this.state.flatData} {...this.props}></ViewFlat>
+                            <ViewFlat {...this.props}></ViewFlat>
                     }
-                </SafeAreaView> */}
+                </SafeAreaView>
             </View>
         );
     }

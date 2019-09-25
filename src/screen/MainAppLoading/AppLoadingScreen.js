@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, Animated } from 'react-native';
-import { companyLogo } from '../../Constants';
+import { companyLogo } from '../../Constants/image';
 import styles from './style';
 
 export class AppLoadingScreen extends Component {
