@@ -4,7 +4,8 @@ import {
     FlatList,
     Text
 } from 'react-native';
-import FlatCardView from './FlatCardView/FlatCardView';
+
+import ContentCardView from './contentCardView';
 
 const styles = StyleSheet.create(
     {
@@ -15,17 +16,17 @@ const styles = StyleSheet.create(
     }
 );
 
-export class ViewFlat extends Component {
+export class FlatCardView extends Component {
     render() {
         return (
             <FlatList
                 data={this.props.flat.response}
                 keyExtractor={flat => flat.id.toString()}
-                renderItem={(flat) => <FlatCardView {...{flat}} />}
+                renderItem={(flat) => <ContentCardView {...this.props} flatInfo={{flat}} />}
                 showsVerticalScrollIndicator={false}
                 style={styles.container} />
         )
     }
 }
 
-export default ViewFlat;
+export default FlatCardView;

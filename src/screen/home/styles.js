@@ -3,6 +3,9 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create(
     {
+        mainContainer:{
+            flex:1
+        },
         toolbar: {
             height: 50,
             backgroundColor: '#123',

@@ -3,15 +3,20 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create(
     {
+        flatContent: {
+            marginHorizontal: 10,
+            marginBottom: 20,
+        },
         card: {
-            padding: 5
+            padding: 10,
+            paddingBottom:5
         },
         container: {
             marginTop: 10,
             marginBottom: 40,
         },
-        flatContent: {
-            margin: 10,
+        flatDetailIcon: {
+            flexDirection: 'row',
         },
         image: {
             backgroundColor: 'white',

@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
+import React, { Component } from 'react';
 
-import HomeView from './screen/Home/HomeView';
-import ViewFlatDetails from './screen/ViewFlatDetails';
-import AppLoadingScreen from './screen/MainAppLoading/AppLoadingScreen';
+import MainAppLoading from './screen/mainAppLoading/mainAppLoading';
+import FlatDetails from './screen/flatDetails/flatDetails';
+import HomeView  from './screen/home/homeView';
 import withConnect from './hoc/withConnect';
 
 
 const RootStack = createStackNavigator(
     {
         Home: HomeView,
-        Details: ViewFlatDetails
+        FlatDetails: FlatDetails
     },
     {
-        initialRouteName: 'Home'
+        initialRouteName: 'Home',
     }
 );
 
 const AppContainer = createAppContainer(RootStack);
+
 export class EntryPoint extends Component {
     constructor(props) {
         super(props)
@@ -37,7 +38,7 @@ export class EntryPoint extends Component {
 
     render() {
         return (
-            this.state.isLoading ? <AppLoadingScreen></AppLoadingScreen> : <AppContainer />
+            this.state.isLoading ? <MainAppLoading > </MainAppLoading>: <AppContainer />
         )
     }
 }

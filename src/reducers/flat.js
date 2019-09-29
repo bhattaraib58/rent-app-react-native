@@ -1,6 +1,12 @@
 import { FLAT_ACTIONS } from '../actions/types';
 
-const flatReducer = (state = [], action) => {
+const initState = {
+    isLoading: false,
+    flatInfo: {},
+    error: {}
+}
+
+const flatReducer = (state = initState, action) => {
     switch (action.type) {
         case FLAT_ACTIONS.VIEW_ALL_FLATS.REQUEST:
             return { ...state, isLoading: true };
@@ -9,7 +15,7 @@ const flatReducer = (state = [], action) => {
             return { ...state, response: action.payload.response, isLoading: false };
 
         case FLAT_ACTIONS.VIEW_ALL_FLATS.FAILED:
-            return { ...state, response: action.payload.error, isLoading: false };
+            return { ...state, error: action.payload.error, isLoading: false };
 
         case 'FLAT_ACTIONS_COMMIT':
             console.warn('action');

@@ -3,8 +3,8 @@ import { persistStore, persistCombineReducers } from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 import createSagaMiddleware from 'redux-saga';
 
-import { offline } from '@redux-offline/redux-offline';
-import offlineConfig from '@redux-offline/redux-offline/lib/defaults';
+// import { offline } from '@redux-offline/redux-offline';
+// import offlineConfig from '@redux-offline/redux-offline/lib/defaults';
 
 import rootReducers from '../reducers';
 import sagas from '../sagas';
@@ -32,7 +32,7 @@ const store = createStore(
     compose(
         ...enhancers,
         reduxDevtool,
-        offline(offlineConfig)
+        // offline(offlineConfig)
     )
 );
 

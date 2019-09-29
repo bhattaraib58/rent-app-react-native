@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, Image, Animated } from 'react-native';
-import { companyLogo } from '../../Constants/image';
+
+import { companyLogo } from '../../constants/image';
 import styles from './style';
 
-export class AppLoadingScreen extends Component {
+export class MainAppLoading extends Component {
     constructor(props) {
         super(props)
 
@@ -54,4 +55,4 @@ export class AppLoadingScreen extends Component {
     }
 }
 
-export default AppLoadingScreen;
+export default MainAppLoading;
