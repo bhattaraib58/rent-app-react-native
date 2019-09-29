@@ -7,10 +7,9 @@ import {
     ScrollView
 } from 'react-native';
 
-import TagsContainer from '../../components/tagsContainer/tagsContainer';
 import { landIcon, locationIcon } from '../../constants/image';
 import styles from './styles';
-
+import TagsContainer from '../tagsContainer/tagsContainer';
 
 export class FlatDetails extends Component {
     render() {

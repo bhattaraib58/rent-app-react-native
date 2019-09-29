@@ -7,6 +7,7 @@ import {
     ActivityIndicator,
     SafeAreaView
 } from 'react-native';
+import { SearchBar } from 'react-native-elements';
 
 
 import FlatCardView from '../flatCardView/flatCardView';
@@ -17,6 +18,21 @@ import styles from './styles';
 
 export class HomeView extends Component {
 
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            search: '',
+        }
+
+        this.updateSearch = this.updateSearch.bind(this);
+    }
+
+    updateSearch(search) {
+        this.setState({ search });
+    }
+
+
     static navigationOptions = { header: null };
 
     componentDidMount() {
@@ -26,12 +42,16 @@ export class HomeView extends Component {
     render() {
         return (
             <View style={styles.mainContainer} onStartShouldSetResponder={() => Keyboard.dismiss()}>
-                <View style={styles.toolbar}>
-                    <Image source={companyLogo} style={styles.logo} />
-                    <TextInput
-                        style={styles.search}
-                        placeholder='Search' />
-                </View>
+                <SearchBar
+                    placeholder="Type address, city, postal"
+                    containerStyle={styles.searchBar}
+                    inputContainerStyle={styles.inputBar}
+                    platform="default"
+                    lightTheme={true}
+                    round={true}
+                    onChangeText={this.updateSearch}
+                    value={this.state.search} />
+                    
                 < SafeAreaView style={this.props.flat.isLoading ? styles.mainContent : null}>
                     {
                         this.props.flat.isLoading ?
@@ -39,7 +59,7 @@ export class HomeView extends Component {
                             <FlatCardView {...this.props} />
                     }
                 </SafeAreaView>
-            </View>
+            </View >
         );
     }
 }

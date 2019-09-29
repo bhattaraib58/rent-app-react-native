@@ -5,16 +5,9 @@ import {
     Text
 } from 'react-native';
 
-import ContentCardView from './contentCardView';
 
-const styles = StyleSheet.create(
-    {
-        container: {
-            marginTop: 10,
-            marginBottom: 40,
-        }
-    }
-);
+import CardViewFlatInfo from '../../components/cardViewFlatInfo/cardViewFlatInfo';
+import styles from './styles';
 
 export class FlatCardView extends Component {
     render() {
@@ -22,7 +15,7 @@ export class FlatCardView extends Component {
             <FlatList
                 data={this.props.flat.response}
                 keyExtractor={flat => flat.id.toString()}
-                renderItem={(flat) => <ContentCardView {...this.props} flatInfo={{flat}} />}
+                renderItem={(flat) => <CardViewFlatInfo flatInfo={flat.item} flatDetailNavigation={this.props.navigation} />}
                 showsVerticalScrollIndicator={false}
                 style={styles.container} />
         )

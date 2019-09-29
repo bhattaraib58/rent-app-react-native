@@ -19,12 +19,18 @@ const styles = StyleSheet.create(
             width: 35,
             marginRight: 15,
         },
-        search: {
-            flex: 1,
+        searchBar: {
+            marginVertical:10,
+            marginHorizontal:20,
+            borderRadius:10,
+            backgroundColor : "#0000",
+            shadowColor: 'black',
+            shadowOffset: { width: 10, height: 10 },
+            shadowOpacity: 5,
+            elevation: 3,
+        },
+        inputBar:{
             backgroundColor: 'white',
-            padding: 5,
-            paddingLeft: 15,
-            borderRadius: 20
         },
         mainContent:{
             justifyContent:'center',
