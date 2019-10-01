@@ -3,16 +3,13 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create(
     {
-        flatContent: {
+        container: {
             marginHorizontal: 20,
             marginBottom: 20,
-        },
-        card: {
-            paddingBottom:5
-        },
-        container: {
-            marginTop: 10,
-            marginBottom: 40,
+            borderRadius:8,
+            shadowColor: 'black',
+            shadowOpacity: 5,
+            elevation: 2,
         },
         flatDetailIcon: {
             flexDirection: 'row',

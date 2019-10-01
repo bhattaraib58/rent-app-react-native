@@ -5,6 +5,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import FlatDetails from '../screen/flatDetails/flatDetails';
 import MapboxView from '../screen/mapboxView/MapboxView';
 import DiscoverFlat from '../screen/discovery/DiscoverFlat';
+import FlatImageView from '../screen/flatImageView/FlatImageView';
 
 const DiscoverStack = createStackNavigator({
     Discover: {
@@ -24,6 +25,12 @@ const DiscoverStack = createStackNavigator({
         screen: MapboxView,
         navigationOptions: {
             headerTitle: 'Map View',
+        }
+    },
+    FlatImageView: {
+        screen: FlatImageView,
+        navigationOptions: {
+            headerTitle: 'Flat Images',
         }
     },
 });

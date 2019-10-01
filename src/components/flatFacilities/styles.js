@@ -4,11 +4,12 @@ import { subTextColor } from '../../constants/color';
 const styles = StyleSheet.create(
     {
         flatDetailIcon: {
-            alignItems: 'flex-start',
+            alignItems: 'center',
             flexDirection: 'row',
             marginVertical: 8,
         },
         facilitiesContainer: {
+            alignItems:'baseline',
             flexDirection: 'row',
             marginRight: 15,
         },

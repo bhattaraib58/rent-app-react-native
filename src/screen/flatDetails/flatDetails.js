@@ -23,41 +23,46 @@ export class FlatDetails extends Component {
         const flat = navigation.getParam('flatInfo');
 
         return (
-            <ScrollView>
-                <View style={styles.imageContainer}>
-                    <Image source={{ uri: flat.image }} style={styles.image} />
+            <>
+                <ScrollView contentContainerStyle={styles.container}>
+                    <View style={styles.imageContainer}>
 
-                    <FavoriteFlat />
+                        <TouchableNativeFeedback onPress={() => navigation.navigate('FlatImageView', { flatImages: flat.images })}>
+                            <Image source={{ uri: flat.images[0] }} style={styles.image} />
+                        </TouchableNativeFeedback>
 
-                    <TouchableNativeFeedback onPress={() => navigation.navigate('MapboxView', { coordinate: flat.coordinate })}>
-                        <View style={styles.mapBoxView}>
-                            <MapboxView coordinate={flat.coordinate} />
-                        </View>
-                    </TouchableNativeFeedback>
-                </View>
+                        <FavoriteFlat />
 
-
-                <View style={styles.mainInfo}>
-                    <View style={styles.mainInfoLeft}>
-                        <Text style={styles.price}>
-                            {flat.Currency} {flat.priceMin} - {flat.priceMax}/{flat.payType}
-                        </Text>
-                        <Text style={styles.location}>{flat.location}</Text>
+                        <TouchableNativeFeedback onPress={() => navigation.navigate('MapboxView', { coordinate: flat.coordinate })}>
+                            <View style={styles.mapBoxView}>
+                                <MapboxView coordinate={flat.coordinate} />
+                            </View>
+                        </TouchableNativeFeedback>
                     </View>
 
-                    <FlatRating {...flat} />
-                </View>
 
-                <FlatOffering />
+                    <View style={styles.mainInfo}>
+                        <View style={styles.mainInfoLeft}>
+                            <Text style={styles.price}>
+                                {flat.Currency} {flat.priceMin} - {flat.priceMax}/{flat.payType}
+                            </Text>
+                            <Text style={styles.location}>{flat.location}</Text>
+                        </View>
 
-                <View style={styles.flatInfo}>
-                    <FlatFacilities {...flat} />
-                    <Text style={styles.details}>{flat.info}</Text>
-                    <TagsContainer tags={flat.tags} />
-                </View>
+                        <FlatRating {...flat} />
+                    </View>
+
+                    <FlatOffering />
+
+                    <View style={styles.flatInfo}>
+                        <FlatFacilities {...flat} />
+                        <Text style={styles.details}>{flat.info}</Text>
+                        <TagsContainer tags={flat.tags} />
+                    </View>
+                </ScrollView >
 
                 <FlatOptions />
-            </ScrollView >
+            </>
         )
     }
 }

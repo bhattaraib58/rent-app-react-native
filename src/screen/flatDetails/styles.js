@@ -3,6 +3,9 @@ import { subTextColor } from '../../constants/color';
 
 const styles = StyleSheet.create(
     {
+        container:{
+            paddingBottom: 60
+        },
         imageContainer: {
             position: 'relative'
         },

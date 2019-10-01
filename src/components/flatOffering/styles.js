@@ -19,8 +19,8 @@ const styles = StyleSheet.create(
             borderRadius:50,
             backgroundColor : "#0000",
             shadowColor: 'black',
-            shadowOpacity: 5,
-            elevation: 3,
+            shadowOpacity: 2,
+            elevation: 1,
         },
         textStyle: {
             fontWeight:"bold",

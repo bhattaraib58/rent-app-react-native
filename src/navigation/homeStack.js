@@ -4,6 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import FlatDetails from '../screen/flatDetails/flatDetails';
 import HomeView from '../screen/home/homeView';
 import MapboxView from '../screen/mapboxView/MapboxView';
+import FlatImageView from '../screen/flatImageView/FlatImageView';
 
 const HomeStack = createStackNavigator({
     HomeView: {
@@ -23,6 +24,12 @@ const HomeStack = createStackNavigator({
         screen: MapboxView,
         navigationOptions: {
             headerTitle:'Map View',
+        }
+    },
+    FlatImageView: {
+        screen: FlatImageView,
+        navigationOptions: {
+            headerTitle:'Flat Images',
         }
     },
 });
