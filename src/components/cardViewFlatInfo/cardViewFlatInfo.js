@@ -9,11 +9,13 @@ import {
 
 
 import TagsContainer from '../tagsContainer/tagsContainer';
-import * as Images from '../../constants/image';
 import styles from './styles';
+import FavoriteFlat from '../favoriteFlat/favoriteFlat';
+import FlatLocation from '../flatLocation/flatLocation';
+import FlatFacilities from '../flatFacilities/flatFacilities';
 
 
-export default function CardViewFlatInfo({flatInfo,flatDetailNavigation}) {
+export default function CardViewFlatInfo({ flatInfo, flatDetailNavigation }) {
     return (
         <View style={styles.flatContent} >
             <CardView
@@ -21,26 +23,22 @@ export default function CardViewFlatInfo({flatInfo,flatDetailNavigation}) {
                 cardMaxElevation={3}
                 cornerRadius={5} style={styles.card}>
 
-                <TouchableWithoutFeedback onPress={() => flatDetailNavigation.navigate(
-                    'FlatDetails',
-                    {
-                        flatInfo: flatInfo
-                    })}>
-                    <Image source={{ uri: flatInfo.image }} style={styles.image} />
-                </TouchableWithoutFeedback>
+                <View style={{ position: 'relative' }}>
+                    <TouchableWithoutFeedback onPress={() => flatDetailNavigation.navigate(
+                        'FlatDetails', { flatInfo: flatInfo })}>
+                        <Image source={{ uri: flatInfo.image }} style={styles.image} />
+                    </TouchableWithoutFeedback>
+
+                    <FavoriteFlat />
+                    <FlatLocation locationName={flatInfo.location} />
+                </View>
 
                 <View style={styles.flatInfo}>
                     <Text style={styles.price}>
                         {flatInfo.Currency} {flatInfo.priceMin} - {flatInfo.priceMax}/{flatInfo.payType}
                     </Text>
 
-                    <View style={styles.flatDetailIcon}>
-                        <Image source={Images.landIcon} style={styles.iconSize} />
-                        <Text>{flatInfo.area}</Text>
-
-                        <Image source={Images.locationIcon} style={styles.iconSize} />
-                        <Text> {flatInfo.location}</Text>
-                    </View>
+                    <FlatFacilities {...flatInfo} />
 
                     <TagsContainer tags={flatInfo.tags} />
                 </View>

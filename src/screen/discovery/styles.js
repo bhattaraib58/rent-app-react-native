@@ -1,38 +1,16 @@
 import { StyleSheet } from 'react-native';
-
+import { textColor } from '../../constants/color';
 
 const styles = StyleSheet.create(
     {
-        flatContent: {
-            marginHorizontal: 10,
-            marginBottom: 20,
-        },
-        card: {
-            padding: 10,
-            paddingBottom:5
-        },
         container: {
-            marginTop: 10,
-            marginBottom: 40,
+            margin: 15,
         },
-        flatDetailIcon: {
-            flexDirection: 'row',
-        },
-        image: {
-            backgroundColor: 'white',
-            borderRadius: 10,
-            width: '100%',
-            height: 200
-        },
-        price: {
+        title: {
+            fontSize: 28,
             fontWeight: 'bold',
-            fontSize: 20,
-            marginHorizontal: 10
-        },
-        iconSize: {
-            height: 15,
-            width: 15,
-            marginHorizontal: 10
+            color: textColor,
+            marginBottom:10
         }
     }
 );

@@ -32,9 +32,6 @@ export class HomeView extends Component {
         this.setState({ search });
     }
 
-
-    static navigationOptions = { header: null };
-
     componentDidMount() {
         this.props.flatInfoRequest();
     }
@@ -55,7 +52,7 @@ export class HomeView extends Component {
                 < SafeAreaView style={this.props.flat.isLoading ? styles.mainContent : null}>
                     {
                         this.props.flat.isLoading ?
-                            <ActivityIndicator /> :
+                            <ActivityIndicator size="large"/> :
                             <FlatCardView {...this.props} />
                     }
                 </SafeAreaView>
