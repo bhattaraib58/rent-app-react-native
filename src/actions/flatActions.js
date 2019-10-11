@@ -6,7 +6,7 @@ export const flatInfoRequest = () => ({
     meta: {
         offline: {
             effect: {
-                url: ApiConstants.BASE_URL + ApiConstants.FLAT,
+                url: ApiConstants.BASE_URL + ApiConstants.TRENDING_FLAT,
                 method: 'GET'
             },
             commit: { type: 'FLAT_ACTIONS_COMMIT' },
