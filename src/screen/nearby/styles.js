@@ -3,10 +3,10 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
+    marginHorizontal: 20,
   },
   searchBar: {
     marginVertical: 10,
-    marginHorizontal: 20,
     borderRadius: 10,
     backgroundColor: '#0000',
     shadowColor: 'black',

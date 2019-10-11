@@ -1,21 +1,63 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {ScrollView, RefreshControl} from 'react-native';
 
+import FlatCategoryCardView from '../../components/flatCategoryCardView/FlatCategoryCardView';
 import FlatCardCarousel from '../../components/flatCardCarousel/FlatCardCarousel';
 import withConnect from '../../hoc/withConnect';
 import styles from './styles';
-
 export class Discover extends Component {
+  _renderItem({item, index}) {
+    return (
+      <FlatCategoryCardView
+        flatInfo={item}
+        flatDetailNavigation={this.props.navigation}
+        containerStyle={this.props.carouselContainerStyle}
+        imageStyle={this.props.carouselImageStyle}
+      />
+    );
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Trending</Text>
+      <ScrollView
+        style={styles.container}
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={this.props.flat.isLoading}
+            onRefresh={this.props.flatInfoRequest}
+          />
+        }>
         <FlatCardCarousel
-          horizontal={true}
-          data={this.props.flat.response}
-          flatDetailNavigation={this.props.navigation}
+          title={'Best Picks'}
+          flatData={this.props.flat.response}
+          navigation={this.props.navigation}
+          _renderItem={this._renderItem}
+          carouselTitleStyle={styles.carouselTitleStyle}
+          carouselContainerStyle={styles.bestPickContainerStyle}
+          carouselImageStyle={styles.bestPickImageStyle}
         />
-      </View>
+
+        <FlatCardCarousel
+          title={'Trending'}
+          flatData={this.props.flat.response}
+          navigation={this.props.navigation}
+          carouselContainerStyle={styles.carouselContainerStyle}
+          carouselImageStyle={styles.trendingImageStyle}
+        />
+
+        <FlatCardCarousel
+          title={'Categories'}
+          horizontal={false}
+          flatData={this.props.flat.response}
+          navigation={this.props.navigation}
+          _renderItem={this._renderItem}
+          carouselTitleStyle={styles.carouselTitleStyle}
+          carouselContainerStyle={styles.carouselContainerStyle}
+          carouselImageStyle={styles.categoryImageStyle}
+        />
+      </ScrollView>
     );
   }
 }

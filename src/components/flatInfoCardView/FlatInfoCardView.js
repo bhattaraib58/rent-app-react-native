@@ -6,15 +6,23 @@ import FavoriteFlat from '../favoriteFlat/FavoriteFlat';
 import FlatLocation from '../flatLocation/FlatLocation';
 import FlatFacilities from '../flatFacilities/FlatFacilities';
 
-export default function FlatInfoCardView({flatInfo, flatDetailNavigation}) {
+export default function FlatInfoCardView({
+  flatInfo,
+  flatDetailNavigation,
+  containerStyle = {},
+  imageStyle = {},
+}) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerStyle]}>
       <View style={styles.imageContainer}>
         <TouchableWithoutFeedback
           onPress={() =>
             flatDetailNavigation.navigate('FlatDetails', {flatInfo: flatInfo})
           }>
-          <Image source={{uri: flatInfo.images[0]}} style={styles.image} />
+          <Image
+            source={{uri: flatInfo.images[0]}}
+            style={[styles.image, imageStyle]}
+          />
         </TouchableWithoutFeedback>
 
         <FavoriteFlat />

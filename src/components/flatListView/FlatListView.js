@@ -2,7 +2,6 @@ import {FlatList, RefreshControl} from 'react-native';
 import React, {useEffect} from 'react';
 
 import FlatInfoCardView from '../flatInfoCardView/FlatInfoCardView';
-import styles from './styles';
 
 export default function FlatListView(props) {
   //its like component did mount
@@ -12,7 +11,6 @@ export default function FlatListView(props) {
 
   return (
     <FlatList
-      contentContainerStyle={styles.contentStyle}
       refreshControl={
         <RefreshControl
           refreshing={props.flat.isLoading}
