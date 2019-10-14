@@ -3,6 +3,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import React, {Component} from 'react';
 
 import {textColor, selectedTextColor, subTextColor} from '../constants/color';
+import Favorite from '../screen/favorite/Favorite';
 import Example from '../screen/example/Example';
 import DiscoverStack from './DiscoverStack';
 import NearbyStack from './NearbyStack';
@@ -25,27 +26,11 @@ const RootStack = createBottomTabNavigator(
         ),
       },
     },
-    Schedule: {
-      screen: Example,
-      navigationOptions: {
-        tabBarIcon: ({tintColor}) => (
-          <Icon name="clock-o" size={25} color={tintColor} />
-        ),
-      },
-    },
     Favorite: {
-      screen: Example,
+      screen: Favorite,
       navigationOptions: {
         tabBarIcon: ({tintColor}) => (
           <Icon name="star-o" size={25} color={tintColor} />
-        ),
-      },
-    },
-    More: {
-      screen: Example,
-      navigationOptions: {
-        tabBarIcon: ({tintColor}) => (
-          <Icon name="puzzle-piece" size={25} color={tintColor} />
         ),
       },
     },
@@ -64,3 +49,23 @@ const RootStack = createBottomTabNavigator(
 );
 
 export default RootStack;
+
+//todo for future
+
+// Schedule: {
+//   screen: Example,
+//   navigationOptions: {
+//     tabBarIcon: ({tintColor}) => (
+//       <Icon name="clock-o" size={25} color={tintColor} />
+//     ),
+//   },
+// },
+
+// More: {
+//   screen: Example,
+//   navigationOptions: {
+//     tabBarIcon: ({tintColor}) => (
+//       <Icon name="puzzle-piece" size={25} color={tintColor} />
+//     ),
+//   },
+// },

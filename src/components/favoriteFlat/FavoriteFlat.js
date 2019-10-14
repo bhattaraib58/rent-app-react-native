@@ -1,64 +1,58 @@
+import React, {useState, useEffect} from 'react';
+import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Snackbar from 'react-native-snackbar';
-import React, {Component} from 'react';
-import {View} from 'react-native';
 
 import styles from './styles';
+import withConnect from '../../hoc/withConnect';
+import {checkDataExists} from '../../utils/checkDataExists';
 
-export class FavoriteFlat extends Component {
-  constructor(props) {
-    super(props);
+const FavoriteFlat = ({
+  addFlatToFavorite,
+  removeFlatFromFavorite,
+  favoriteFlat,
+  flatInfo,
+}) => {
+  const [favoriteFlatAdded, setFavoriteFlatAdded] = useState(false);
 
-    this.state = {
-      added: false,
-    };
+  const setFavouriteAdded = () => {
+    setFavoriteFlatAdded(!favoriteFlatAdded);
 
-    this.favoriteIcon = {
-      notAdded: 'ios-star-outline',
-      added: 'ios-star',
-    };
-
-    this.setFavouriteAdded = this.setFavouriteAdded.bind(this);
-    this.showFavouriteAddedInfo = this.showFavouriteAddedInfo.bind(this);
-  }
-
-  setFavouriteAdded() {
-    this.setState(
-      {
-        added: !this.state.added,
-      },
-      this.showFavouriteAddedInfo,
-    );
-  }
-
-  showFavouriteAddedInfo() {
     Snackbar.show({
-      title: this.state.added ? 'Added To Favorites' : 'Removed From Favorites',
+      title: !favoriteFlatAdded
+        ? 'Added To Favorites'
+        : 'Removed From Favorites',
       color: 'white',
       duration: Snackbar.LENGTH_SHORT,
       action: {
         title: 'UNDO',
         color: 'green',
-        onPress: this.setFavouriteAdded,
       },
     });
-  }
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <Icon
-          name={
-            this.state.added
-              ? this.favoriteIcon.added
-              : this.favoriteIcon.notAdded
-          }
-          style={styles.iconStyle}
-          onPress={this.setFavouriteAdded}
-        />
-      </View>
+    !favoriteFlatAdded
+      ? addFlatToFavorite(flatInfo)
+      : removeFlatFromFavorite(flatInfo);
+  };
+
+  useEffect(() => {
+    let flatFavouritedStatus = checkDataExists(
+      favoriteFlat.favoriteFlat,
+      flatInfo,
     );
-  }
-}
 
-export default FavoriteFlat;
+    setFavoriteFlatAdded(flatFavouritedStatus);
+  }, [favoriteFlat, flatInfo]);
+
+  return (
+    <View style={styles.container}>
+      <Icon
+        name={favoriteFlatAdded ? 'ios-star' : 'ios-star-outline'}
+        style={styles.iconStyle}
+        onPress={setFavouriteAdded}
+      />
+    </View>
+  );
+};
+
+export default withConnect(FavoriteFlat);

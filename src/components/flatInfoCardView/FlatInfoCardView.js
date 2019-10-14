@@ -25,7 +25,7 @@ export default function FlatInfoCardView({
           />
         </TouchableWithoutFeedback>
 
-        <FavoriteFlat />
+        <FavoriteFlat flatInfo={flatInfo} />
 
         <FlatLocation locationName={flatInfo.location} />
       </View>

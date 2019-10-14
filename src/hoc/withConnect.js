@@ -4,10 +4,10 @@ import {connect} from 'react-redux';
 import {ActionCreators} from '../actions/index';
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
     flat: state.flat,
     login: state.login,
+    favoriteFlat: state.favoriteFlat,
   };
 }
 

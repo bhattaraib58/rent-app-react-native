@@ -7,6 +7,7 @@ import styles from './styles';
 /**
  *
  * @props {horizontal - boolean}, {_renderItem(flatInfo) - renderFunction } , {flatData -  flatInfo data array}
+ * ,navigation, carouselTitleStyle, carouselContainerStyle, carouselImageStyle
  * @export
  * @class FlatCardCarousel
  * @extends {Component}
@@ -38,7 +39,7 @@ export default class FlatCardCarousel extends Component {
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
           renderItem={flatInfo => {
-            _renderItem = this.props._renderItem
+            let _renderItem = this.props._renderItem
               ? this.props._renderItem.bind(this)
               : this._renderItem.bind(this);
 

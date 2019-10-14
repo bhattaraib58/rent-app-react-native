@@ -20,7 +20,7 @@ import styles from './styles';
 export class FlatDetails extends Component {
   render() {
     const {navigation} = this.props;
-    const flat = navigation.getParam('flatInfo');
+    const flatInfo = navigation.getParam('flatInfo');
 
     return (
       <>
@@ -28,19 +28,23 @@ export class FlatDetails extends Component {
           <View style={styles.imageContainer}>
             <TouchableNativeFeedback
               onPress={() =>
-                navigation.navigate('FlatImageCarousel', {flatImages: flat.images})
+                navigation.navigate('FlatImageCarousel', {
+                  flatImages: flatInfo.images,
+                })
               }>
-              <Image source={{uri: flat.images[0]}} style={styles.image} />
+              <Image source={{uri: flatInfo.images[0]}} style={styles.image} />
             </TouchableNativeFeedback>
 
-            <FavoriteFlat />
+            <FavoriteFlat flatInfo={flatInfo} />
 
             <TouchableNativeFeedback
               onPress={() =>
-                navigation.navigate('MapboxView', {coordinate: flat.coordinate})
+                navigation.navigate('MapboxView', {
+                  coordinate: flatInfo.coordinate,
+                })
               }>
               <View style={styles.mapBoxView}>
-                <MapboxView coordinate={flat.coordinate} />
+                <MapboxView coordinate={flatInfo.coordinate} />
               </View>
             </TouchableNativeFeedback>
           </View>
@@ -48,20 +52,21 @@ export class FlatDetails extends Component {
           <View style={styles.mainInfo}>
             <View style={styles.mainInfoLeft}>
               <Text style={styles.price}>
-                {flat.Currency} {flat.priceMin} - {flat.priceMax}/{flat.payType}
+                {flatInfo.Currency} {flatInfo.priceMin} - {flatInfo.priceMax}/
+                {flatInfo.payType}
               </Text>
-              <Text style={styles.location}>{flat.location}</Text>
+              <Text style={styles.location}>{flatInfo.location}</Text>
             </View>
 
-            <FlatRating {...flat} />
+            <FlatRating {...flatInfo} />
           </View>
 
           <FlatOffering />
 
           <View style={styles.flatInfo}>
-            <FlatFacilities {...flat} />
-            <Text style={styles.details}>{flat.info}</Text>
-            <TagsContainer tags={flat.tags} />
+            <FlatFacilities {...flatInfo} />
+            <Text style={styles.details}>{flatInfo.info}</Text>
+            <TagsContainer tags={flatInfo.tags} />
           </View>
         </ScrollView>
 
