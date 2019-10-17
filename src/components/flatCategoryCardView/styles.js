@@ -22,9 +22,9 @@ const styles = StyleSheet.create({
   },
   flatInfo: {
     position: 'absolute',
-    bottom:'-15%',
-    left:'15%',
-    right:'15%',
+    bottom: '-15%',
+    left: '15%',
+    right: '15%',
 
     width: '70%',
     backgroundColor: 'white',

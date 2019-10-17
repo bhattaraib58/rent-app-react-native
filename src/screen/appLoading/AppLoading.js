@@ -3,6 +3,7 @@ import {View, Text, Image, Animated} from 'react-native';
 
 import {companyLogo} from '../../constants/image';
 import styles from './style';
+import auth, {firebase} from '@react-native-firebase/auth';
 
 export class AppLoading extends Component {
   constructor(props) {
@@ -12,6 +13,8 @@ export class AppLoading extends Component {
       fadeIn: new Animated.Value(0),
       fadeOut: new Animated.Value(1),
     };
+
+    this._onAuthStateChanged = this._onAuthStateChanged.bind(this);
   }
 
   componentDidMount() {
@@ -32,8 +35,14 @@ export class AppLoading extends Component {
       toValue: 0,
       duration: 2500,
       useNativeDriver: true,
-    }).start();
+    }).start(() => this._onAuthStateChanged());
   }
+
+  _onAuthStateChanged = () => {
+    auth().onAuthStateChanged(user => {
+      this.props.navigation.navigate(user ? 'App' : 'Auth');
+    });
+  };
 
   render() {
     return (
