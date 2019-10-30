@@ -13,6 +13,7 @@
     "@react-native-community/netinfo": "^4.2.2",
     "@react-native-firebase/app": "^6.0.1",
     "@react-native-firebase/auth": "^6.0.1",
+    "@react-native-firebase/firestore": "^6.0.1",
     "@react-native-mapbox-gl/maps": "^7.0.7",
     "@redux-offline/redux-offline": "^2.5.2-native.1",
     "react": "16.10.2",
