@@ -18,7 +18,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <PersistGate
-        loading={<ActivityIndicator size="large" color="#00ff00" />}
+        // loading={<ActivityIndicator size="large" color="#00ff00" />}
         persistor={persistor}>
         <EntryPoint></EntryPoint>
       </PersistGate>

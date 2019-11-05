@@ -1,34 +1,45 @@
-import { createStore, compose, applyMiddleware } from 'redux';
-import { persistStore, persistCombineReducers } from 'redux-persist';
+import {createStore, compose, applyMiddleware} from 'redux';
+import {
+  persistStore,
+  persistCombineReducers,
+  persistReducer,
+} from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 import createSagaMiddleware from 'redux-saga';
+
+// import { offline } from '@redux-offline/redux-offline';
+// import offlineConfig from '@redux-offline/redux-offline/lib/defaults';
 
 import rootReducers from '../reducers';
 import sagas from '../sagas';
 
 const config = {
-    key: 'root',
-    storage:AsyncStorage,
-    blacklist: ['LoginAction'],
-    debug: true
+  key: 'root',
+  storage: AsyncStorage,
 };
+const reducers = persistReducer(config, rootReducers);
 
-const middleware = [];
 const sagaMiddleware = createSagaMiddleware();
-middleware.push(sagaMiddleware);
 
-const reducers = persistCombineReducers(config, rootReducers);
-const enhancers = [applyMiddleware(...middleware)];
+const reduxDevtool =
+  (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()) ||
+  compose;
 
-const persistConfig = { enhancers };
-const store = createStore(reducers, undefined, compose(...enhancers));
+const store = createStore(
+  reducers,
+  undefined,
+  compose(
+    applyMiddleware(sagaMiddleware),
+    reduxDevtool,
+    // offline(offlineConfig)
+  ),
+);
 
-const persistor = persistStore(store, persistConfig, () => {
-    // console.log('Test', store.getState());
-});
+const persistor = persistStore(store);
 
 const configureStore = () => {
-    return { persistor, store };
+  return {persistor, store};
 };
 
 sagaMiddleware.run(sagas);

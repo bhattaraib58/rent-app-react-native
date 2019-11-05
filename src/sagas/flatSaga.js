@@ -1,10 +1,15 @@
-import ApiConstants from "../api/APiConstants";
+import { put } from 'redux-saga/effects';
+
 import * as FlatInfoActions from "../actions/flatActions";
+import ApiConstants from "../constants/apiConstants";
 
 export default function* getFlatInfoAsync() {
-    const json = yield fetch(ApiConstants.BASE_URL + ApiConstants.FLAT)
-        .then(response => response.json());
-    console.log(json);
-
-    yield put(FlatInfoActions.flatInfoResponse(json));
+    try {
+        const result = yield fetch(ApiConstants.BASE_URL + ApiConstants.TRENDING_FLAT)
+            .then(response => response.json());
+        yield put(FlatInfoActions.flatInfoResponse(result));
+    }
+    catch (error) {
+        yield put(FlatInfoActions.flatInfoFailed(error));
+    }
 }

@@ -1,45 +1,34 @@
-import React, { Component } from 'react';
-import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
+import {createAppContainer} from 'react-navigation';
+import React, {Component} from 'react';
 
-import HomeView from './screen/Home/HomeView';
-import ViewFlatDetails from './screen/ViewFlatDetails';
-import AppLoadingScreen from './screen/MainAppLoading/AppLoadingScreen';
 import withConnect from './hoc/withConnect';
-
-
-const RootStack = createStackNavigator(
-    {
-        Home: HomeView,
-        Details: ViewFlatDetails
-    },
-    {
-        initialRouteName: 'Home'
-    }
-);
+import RootStack from './navigation/rootStack';
+import AppLoading from './screen/appLoading/AppLoading';
 
 const AppContainer = createAppContainer(RootStack);
+
 export class EntryPoint extends Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            isLoading: true,
-        }
-    }
+    this.state = {
+      isLoading: true,
+    };
+  }
 
-    componentDidMount() {
-        setTimeout(() => this.setState({
-            isLoading: false
-        }), 2000);
-    }
+  componentDidMount() {
+    setTimeout(
+      () =>
+        this.setState({
+          isLoading: false,
+        }),
+      2000,
+    );
+  }
 
-
-    render() {
-        return (
-            this.state.isLoading ? <AppLoadingScreen></AppLoadingScreen> : <AppContainer />
-        )
-    }
+  render() {
+    return this.state.isLoading ? <AppLoading> </AppLoading> : <AppContainer />;
+  }
 }
 
 export default withConnect(EntryPoint);

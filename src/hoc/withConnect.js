@@ -1,18 +1,23 @@
-import { connect } from 'react-redux';
-import { bindActionCreators, compose } from 'redux';
-import { ActionCreators } from '../actions/index';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+
+import {ActionCreators} from '../actions/index';
 
 function mapStateToProps(state) {
-    return {
-        flat: state.flat,
-        login: state.login,
-    };
+  return {
+    flat: state.flat,
+    login: state.login,
+    favoriteFlat: state.favoriteFlat,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators(ActionCreators, dispatch);
+  return bindActionCreators(ActionCreators, dispatch);
 }
 
-const withConnect = compose(connect(mapStateToProps, mapDispatchToProps));
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+);
 
 export default withConnect;
