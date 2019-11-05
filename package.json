@@ -5,8 +5,12 @@
   "scripts": {
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint .",
-    "pretty": "prettier --write \"./**/*.{js,jsx,json}\""
+    "eslint": "eslint src",
+    "eslint:fix": "eslint --fix src",
+    "lint": "yarn prettier && yarn eslint",
+    "lint:fix": "yarn prettier:fix && yarn eslint:fix",
+    "prettier": "prettier \"{src,api}/**/*.js\" \"{src,api}/**/*.jsx\"",
+    "prettier:fix": "prettier --write \"{src,api}/**/*.js\" \"{src,api}/**/*.jsx\""
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",
