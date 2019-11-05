@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Snackbar from 'react-native-snackbar';
@@ -7,7 +8,13 @@ import styles from './styles';
 import withConnect from '../../hoc/withConnect';
 import { checkDataExists } from '../../utils/checkDataExists';
 
-const FavoriteFlat = ({ addFlatToFavorite, removeFlatFromFavorite, favoriteFlat, flatInfo }) => {
+/**
+ * Favorite Flat Star Component.
+ *
+ * @param {*} Props { addFlatToFavorite, removeFlatFromFavorite, favoriteFlat, flatInfo }.
+ * @returns
+ */
+function FavoriteFlat({ addFlatToFavorite, removeFlatFromFavorite, favoriteFlat, flatInfo }) {
   const [favoriteFlatAdded, setFavoriteFlatAdded] = useState(false);
 
   const setFavouriteAdded = () => {
@@ -41,6 +48,13 @@ const FavoriteFlat = ({ addFlatToFavorite, removeFlatFromFavorite, favoriteFlat,
       />
     </View>
   );
+}
+
+FavoriteFlat.propTypes = {
+  addFlatToFavorite: PropTypes.func.isRequired,
+  removeFlatFromFavorite: PropTypes.func.isRequired,
+  favoriteFlat: PropTypes.object.isRequired,
+  flatInfo: PropTypes.object.isRequired
 };
 
 export default withConnect(FavoriteFlat);

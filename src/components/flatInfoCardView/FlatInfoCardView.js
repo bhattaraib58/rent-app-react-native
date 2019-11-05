@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text, View, Image, TouchableWithoutFeedback } from 'react-native';
 
 import styles from './styles';
@@ -6,7 +7,13 @@ import FavoriteFlat from '../favoriteFlat/FavoriteFlat';
 import FlatLocation from '../flatLocation/FlatLocation';
 import FlatFacilities from '../flatFacilities/FlatFacilities';
 
-export default function FlatInfoCardView({ flatInfo, flatDetailNavigation, containerStyle = {}, imageStyle = {} }) {
+/**
+ *  Flat Info Card View.
+ *
+ * @param {*} Props { flatInfo, flatDetailNavigation, containerStyle = {}, imageStyle = {} }.
+ * @returns
+ */
+function FlatInfoCardView({ flatInfo, flatDetailNavigation, containerStyle = {}, imageStyle = {} }) {
   return (
     <View style={[styles.container, containerStyle]}>
       <View style={styles.imageContainer}>
@@ -29,3 +36,12 @@ export default function FlatInfoCardView({ flatInfo, flatDetailNavigation, conta
     </View>
   );
 }
+
+FlatInfoCardView.propTypes = {
+  flatInfo: PropTypes.object.isRequired,
+  flatDetailNavigation: PropTypes.object.isRequired,
+  containerStyle: PropTypes.object,
+  imageStyle: PropTypes.object
+};
+
+export default FlatInfoCardView;

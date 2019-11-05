@@ -1,7 +1,9 @@
-import React from 'react';
 import { View, Text, Image } from 'react-native';
-import styles from './styles';
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import { companyLogo } from '../../constants/image';
+import styles from './styles';
 
 /**
  * Header for screen pages.
@@ -9,13 +11,18 @@ import { companyLogo } from '../../constants/image';
  * @param {*} { ShowCompanyLogo = false, headerInfo = null }.
  * @returns
  */
-const PageHeader = ({ showCompanyLogo = false, headerInfo = null }) => {
+function PageHeader({ showCompanyLogo = false, headerInfo = null }) {
   return (
     <View style={styles.container}>
       {showCompanyLogo ? <Image source={companyLogo} style={styles.logoStyle} /> : null}
       <Text style={styles.companyName}>{headerInfo}</Text>
     </View>
   );
+}
+
+PageHeader.propTypes = {
+  showCompanyLogo: PropTypes.bool,
+  headerInfo: PropTypes.string
 };
 
 export default PageHeader;

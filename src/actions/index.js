@@ -1,5 +1,4 @@
 import { flatInfoRequest, flatInfoResponse, flatInfoFailed } from './flatActions';
-import * as LoginAction from './loginActions';
 import { addFlatToFavorite, removeFlatFromFavorite } from './favoriteFlat';
 
 export const ActionCreators = {

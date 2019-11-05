@@ -1,7 +1,6 @@
 /**
  * Check Data exists in array.
  *
- * @export
  * @param {*} dataArray
  * @param {*} data
  * @returns

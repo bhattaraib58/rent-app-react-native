@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import PropTypes from 'prop-types';
+import { Text } from 'react-native';
+
 import styles from './styles';
 
 /**
@@ -8,8 +10,13 @@ import styles from './styles';
  * @param {*} { TextName, textStyle }.
  * @returns
  */
-const CustomText = ({ textName, textStyle }) => {
+function CustomText({ textName, textStyle }) {
   return <Text style={[styles.textStyle, textStyle]}>{textName}:</Text>;
+}
+
+CustomText.propTypes = {
+  textName: PropTypes.string.isRequired,
+  textStyle: PropTypes.object
 };
 
 export default CustomText;

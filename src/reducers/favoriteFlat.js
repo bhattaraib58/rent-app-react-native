@@ -5,14 +5,28 @@ const initState = {
   favoriteFlat: []
 };
 
+/**
+ * Add Flat Info To Favorite Flat Array.
+ *
+ * @param {*} favoriteFlat
+ * @param {*} flatInfo
+ * @returns
+ */
 function addFlatToFavorite(favoriteFlat, flatInfo) {
   if (!checkDataExists(favoriteFlat, flatInfo)) {
     favoriteFlat.push(flatInfo);
   }
-  
+
   return favoriteFlat;
 }
 
+/**
+ * Remove Flat Info From Favorite Flat Array.
+ *
+ * @param {*} favoriteFlat
+ * @param {*} flatInfo
+ * @returns
+ */
 function removeFlatFromFavorite(favoriteFlat, flatInfo) {
   return favoriteFlat.filter(dataInfo => {
     return dataInfo.id !== flatInfo.id;

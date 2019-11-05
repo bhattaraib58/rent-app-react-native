@@ -1,10 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import styles from './styles';
 
-const FlatCategoryCardView = ({ flatInfo, flatDetailNavigation, containerStyle = {}, imageStyle = {} }) => {
+/**
+ * Flat Category Card View.
+ *
+ * @param {*} Props { flatInfo, flatDetailNavigation, containerStyle = {}, imageStyle = {} }.
+ * @returns
+ */
+function FlatCategoryCardView({ flatInfo, flatDetailNavigation, containerStyle = {}, imageStyle = {} }) {
   return (
     <View style={[styles.container, containerStyle]}>
       <View style={styles.imageContainer}>
@@ -25,6 +32,13 @@ const FlatCategoryCardView = ({ flatInfo, flatDetailNavigation, containerStyle =
       </View>
     </View>
   );
+}
+
+FlatCategoryCardView.propTypes = {
+  flatInfo: PropTypes.object.isRequired,
+  flatDetailNavigation: PropTypes.object.isRequired,
+  containerStyle: PropTypes.object,
+  imageStyle: PropTypes.object
 };
 
 export default FlatCategoryCardView;

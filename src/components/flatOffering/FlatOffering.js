@@ -4,7 +4,12 @@ import React from 'react';
 
 import styles from './styles';
 
-export default function FlatOffering() {
+/**
+ * Flat Offering Component.
+ *
+ * @returns
+ */
+function FlatOffering() {
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>
@@ -41,3 +46,5 @@ export default function FlatOffering() {
     </View>
   );
 }
+
+export default FlatOffering;

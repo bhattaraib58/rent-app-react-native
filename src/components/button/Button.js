@@ -1,13 +1,13 @@
 import React from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import PropTypes from 'prop-types';
+import { Text, TouchableOpacity } from 'react-native';
 
 import styles from './styles';
 
 /**
  * Custom Button.
  *
- * @export
- * @param {*} {
+ * @param {*} Props {
  *   title = 'Enter',
  *   style = {},
  *   textStyle = {},
@@ -16,10 +16,20 @@ import styles from './styles';
  * }.
  * @returns
  */
-export default function Button({ title = 'Enter', style = {}, textStyle = {}, disable = false, onPress = () => {} }) {
+function Button({ title = 'Enter', style = {}, textStyle = {}, disable = false, onPress = () => {} }) {
   return (
     <TouchableOpacity style={[styles.buttonStyle, style]} disabled={disable} onPress={onPress}>
       <Text style={[styles.textStyle, textStyle]}>{title}</Text>
     </TouchableOpacity>
   );
 }
+
+Button.propTypes = {
+  title: PropTypes.string,
+  style: PropTypes.object,
+  textStyle: PropTypes.object,
+  disable: PropTypes.bool,
+  onPress: PropTypes.func
+};
+
+export default Button;

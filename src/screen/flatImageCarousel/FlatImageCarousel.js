@@ -36,7 +36,6 @@ export class FlatImageCarousel extends Component {
   slideIndicatorIcon(index) {
     const activeIndexIndicator = index == this.state.currentIndex ? styles.activeIndicator : {};
 
-    
     return <View style={[styles.indicator, activeIndexIndicator]} key={index}></View>;
   }
 

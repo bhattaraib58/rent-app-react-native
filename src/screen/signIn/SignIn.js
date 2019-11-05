@@ -33,7 +33,7 @@ export default class SignIn extends Component {
     if (!messageView) {
       this.errors.delete(name);
     }
-    
+
     return messageView;
   }
 

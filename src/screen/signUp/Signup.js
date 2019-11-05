@@ -36,7 +36,7 @@ export default class Signup extends Component {
     if (!messageView) {
       this.errors.delete(name);
     }
-    
+
     return messageView;
   }
 
@@ -44,10 +44,10 @@ export default class Signup extends Component {
     this.errors.add("Password Don't Match");
     if (password === repassword) {
       this.errors.delete("Password Don't Match");
-      
+
       return null;
     }
-    
+
     return <Text style={styles.error}>*Please Enter Same Passwords</Text>;
   }
 

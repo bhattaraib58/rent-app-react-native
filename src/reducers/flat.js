@@ -19,12 +19,12 @@ const flatReducer = (state = initState, action) => {
 
     case 'FLAT_ACTIONS_COMMIT':
       console.warn('action');
-      
+
       return { ...state, response: action.payload, isLoading: false };
 
     case 'FLAT_ACTIONS_ROLLBACK':
       console.warn('action');
-      
+
       return { ...state, error: action.payload, isLoading: false };
 
     default:

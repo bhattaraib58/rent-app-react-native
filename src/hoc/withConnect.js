@@ -3,6 +3,12 @@ import { connect } from 'react-redux';
 
 import { ActionCreators } from '../actions/index';
 
+/**
+ * MapStateToProps.
+ *
+ * @param {*} state
+ * @returns
+ */
 function mapStateToProps(state) {
   return {
     flat: state.flat,
@@ -11,6 +17,12 @@ function mapStateToProps(state) {
   };
 }
 
+/**
+ * MapDispatchToProps.
+ *
+ * @param {*} dispatch
+ * @returns
+ */
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(ActionCreators, dispatch);
 }

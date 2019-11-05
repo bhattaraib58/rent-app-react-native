@@ -3,6 +3,10 @@ import { put } from 'redux-saga/effects';
 import * as FlatInfoActions from '../actions/flatActions';
 import ApiConstants from '../constants/apiConstants';
 
+/**
+ * Async Request For Flat Info And Get Results.
+ *
+ */
 export default function* getFlatInfoAsync() {
   try {
     const result = yield fetch(ApiConstants.BASE_URL + ApiConstants.TRENDING_FLAT).then(response => response.json());

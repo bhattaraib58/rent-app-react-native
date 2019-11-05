@@ -1,9 +1,16 @@
 import { View, Text } from 'react-native';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import styles from './style';
 
-export default function TagsContainer({ tags }) {
+/**
+ * Tags Container Component.
+ *
+ * @param {*} Props { tags }.
+ * @returns
+ */
+function TagsContainer({ tags }) {
   return (
     <View style={styles.tagsContainer}>
       {tags.map((tag, key) => {
@@ -16,3 +23,9 @@ export default function TagsContainer({ tags }) {
     </View>
   );
 }
+
+TagsContainer.propTypes = {
+  tags: PropTypes.array
+};
+
+export default TagsContainer;

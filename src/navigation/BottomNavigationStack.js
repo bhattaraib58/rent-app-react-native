@@ -1,12 +1,14 @@
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import React, { Component } from 'react';
+import React from 'react';
 
 import { selectedTextColor, subTextColor } from '../constants/color';
 import Favorite from '../screen/favorite/Favorite';
 import DiscoverStack from './DiscoverStack';
 import NearbyStack from './NearbyStack';
 import Example from '../screen/example/Example';
+
+/* eslint-disable react/prop-types,react/display-name */
 
 const BottomNavigationStack = createBottomTabNavigator(
   {
@@ -49,14 +51,3 @@ const BottomNavigationStack = createBottomTabNavigator(
 );
 
 export default BottomNavigationStack;
-
-// todo for future
-
-// Schedule: {
-//   screen: Example,
-//   navigationOptions: {
-//     tabBarIcon: ({tintColor}) => (
-//       <Icon name="clock-o" size={25} color={tintColor} />
-//     ),
-//   },
-// },
