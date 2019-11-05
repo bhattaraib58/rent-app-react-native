@@ -1,71 +1,24 @@
-import {createBottomTabNavigator} from 'react-navigation-tabs';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import React, {Component} from 'react';
+import {createSwitchNavigator} from 'react-navigation';
 
-import {textColor, selectedTextColor, subTextColor} from '../constants/color';
-import Favorite from '../screen/favorite/Favorite';
-import Example from '../screen/example/Example';
-import DiscoverStack from './DiscoverStack';
-import NearbyStack from './NearbyStack';
+import BottomNavigationStack from './BottomNavigationStack';
+import AppLoading from '../screen/appLoading/AppLoading';
+import AuthStack from './AuthStack';
 
-const RootStack = createBottomTabNavigator(
+const RootStack = createSwitchNavigator(
   {
-    Nearby: {
-      screen: NearbyStack,
-      navigationOptions: {
-        tabBarIcon: ({tintColor}) => (
-          <Icon name="map-o" size={25} color={tintColor} />
-        ),
-      },
+    AuthLoading: {
+      screen: AppLoading,
     },
-    Discovery: {
-      screen: DiscoverStack,
-      navigationOptions: {
-        tabBarIcon: ({tintColor}) => (
-          <Icon name="compass" size={25} color={tintColor} />
-        ),
-      },
+    App: {
+      screen: BottomNavigationStack,
     },
-    Favorite: {
-      screen: Favorite,
-      navigationOptions: {
-        tabBarIcon: ({tintColor}) => (
-          <Icon name="star-o" size={25} color={tintColor} />
-        ),
-      },
+    Auth: {
+      screen: AuthStack,
     },
   },
   {
-    initialRouteName: 'Nearby',
-    tabBarOptions: {
-      activeTintColor: selectedTextColor,
-      labelStyle: {
-        fontSize: 12,
-        color: subTextColor,
-        fontWeight: 'bold',
-      },
-    },
+    initialRouteName: 'AuthLoading',
   },
 );
 
 export default RootStack;
-
-//todo for future
-
-// Schedule: {
-//   screen: Example,
-//   navigationOptions: {
-//     tabBarIcon: ({tintColor}) => (
-//       <Icon name="clock-o" size={25} color={tintColor} />
-//     ),
-//   },
-// },
-
-// More: {
-//   screen: Example,
-//   navigationOptions: {
-//     tabBarIcon: ({tintColor}) => (
-//       <Icon name="puzzle-piece" size={25} color={tintColor} />
-//     ),
-//   },
-// },

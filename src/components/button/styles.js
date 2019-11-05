@@ -3,7 +3,6 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   buttonStyle: {
-    height: 50,
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',

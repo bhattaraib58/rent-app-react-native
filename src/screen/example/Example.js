@@ -1,11 +1,26 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
+import auth, {firebase} from '@react-native-firebase/auth';
 
 export class Example extends Component {
+  logoutUser() {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        console.log('logouted');
+      })
+      .catch(() => {
+        console.log('some error occured');
+      });
+  }
+
   render() {
     return (
       <View>
-        <Text>This is test</Text>
+        <TouchableOpacity onPress={this.logoutUser}>
+          <Text>Click here to logout</Text>
+        </TouchableOpacity>
       </View>
     );
   }
