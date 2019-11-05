@@ -1,5 +1,5 @@
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 import React from 'react';
 
 import styles from './styles';

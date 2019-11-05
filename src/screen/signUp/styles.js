@@ -1,38 +1,38 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: 'relative',
+    position: 'relative'
   },
   formContainer: {
-    marginBottom: 40,
+    marginBottom: 40
   },
   inputGroup: {
-    margin: 10,
+    margin: 10
   },
   signUpMessageContainer: {
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 10,
-    paddingVertical: 15,
+    paddingVertical: 15
   },
   signUpMessageText: {
     color: 'white',
     fontSize: 18,
-    lineHeight: 20,
+    lineHeight: 20
   },
   signUpError: {
-    backgroundColor: 'red',
+    backgroundColor: 'red'
   },
   signUpSuccess: {
-    backgroundColor: 'green',
+    backgroundColor: 'green'
   },
   error: {
     marginHorizontal: 10,
     color: 'red',
     fontSize: 15,
-    lineHeight: 20,
+    lineHeight: 20
   },
   signupContainer: {
     position: 'absolute',
@@ -42,16 +42,16 @@ const styles = StyleSheet.create({
 
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   signupPreText: {
     color: '#324F80',
-    fontSize: 17,
+    fontSize: 17
   },
   linkText: {
     color: '#324F80',
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 20
   },
   buttonStyle: {
     fontSize: 15,
@@ -70,13 +70,13 @@ const styles = StyleSheet.create({
     margin: 10,
 
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   textStyle: {
     color: '#fff',
     fontWeight: 'bold',
-    fontSize: 15,
-  },
+    fontSize: 15
+  }
 });
 
 export default styles;

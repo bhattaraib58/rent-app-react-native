@@ -1,4 +1,4 @@
-import {createStackNavigator} from 'react-navigation-stack';
+import { createStackNavigator } from 'react-navigation-stack';
 
 import SignIn from '../screen/signIn/SignIn';
 import Signup from '../screen/signUp/Signup';
@@ -8,19 +8,19 @@ const AuthStack = createStackNavigator(
     SignIn: {
       screen: SignIn,
       navigationOptions: {
-        header: null,
-      },
+        header: null
+      }
     },
     Signup: {
       screen: Signup,
       navigationOptions: {
-        header: null,
-      },
-    },
+        header: null
+      }
+    }
   },
   {
-    initialRouteName: 'SignIn',
-  },
+    initialRouteName: 'SignIn'
+  }
 );
 
 export default AuthStack;

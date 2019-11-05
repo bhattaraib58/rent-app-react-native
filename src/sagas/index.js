@@ -1,5 +1,5 @@
-import {takeLatest, all} from 'redux-saga/effects';
-import {FLAT_ACTIONS} from '../actions/types';
+import { takeLatest, all } from 'redux-saga/effects';
+import { FLAT_ACTIONS } from '../actions/types';
 import flatSaga from './flatSaga';
 
 export default function* watch() {

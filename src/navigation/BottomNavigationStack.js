@@ -1,8 +1,8 @@
-import {createBottomTabNavigator} from 'react-navigation-tabs';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-import {selectedTextColor, subTextColor} from '../constants/color';
+import { selectedTextColor, subTextColor } from '../constants/color';
 import Favorite from '../screen/favorite/Favorite';
 import DiscoverStack from './DiscoverStack';
 import NearbyStack from './NearbyStack';
@@ -13,35 +13,27 @@ const BottomNavigationStack = createBottomTabNavigator(
     Nearby: {
       screen: NearbyStack,
       navigationOptions: {
-        tabBarIcon: ({tintColor}) => (
-          <Icon name="map-o" size={25} color={tintColor} />
-        ),
-      },
+        tabBarIcon: ({ tintColor }) => <Icon name="map-o" size={25} color={tintColor} />
+      }
     },
     Discovery: {
       screen: DiscoverStack,
       navigationOptions: {
-        tabBarIcon: ({tintColor}) => (
-          <Icon name="compass" size={25} color={tintColor} />
-        ),
-      },
+        tabBarIcon: ({ tintColor }) => <Icon name="compass" size={25} color={tintColor} />
+      }
     },
     Favorite: {
       screen: Favorite,
       navigationOptions: {
-        tabBarIcon: ({tintColor}) => (
-          <Icon name="star-o" size={25} color={tintColor} />
-        ),
-      },
+        tabBarIcon: ({ tintColor }) => <Icon name="star-o" size={25} color={tintColor} />
+      }
     },
     More: {
       screen: Example,
       navigationOptions: {
-        tabBarIcon: ({tintColor}) => (
-          <Icon name="puzzle-piece" size={25} color={tintColor} />
-        ),
-      },
-    },
+        tabBarIcon: ({ tintColor }) => <Icon name="puzzle-piece" size={25} color={tintColor} />
+      }
+    }
   },
   {
     initialRouteName: 'Nearby',
@@ -50,15 +42,15 @@ const BottomNavigationStack = createBottomTabNavigator(
       labelStyle: {
         fontSize: 12,
         color: subTextColor,
-        fontWeight: 'bold',
-      },
-    },
-  },
+        fontWeight: 'bold'
+      }
+    }
+  }
 );
 
 export default BottomNavigationStack;
 
-//todo for future
+// todo for future
 
 // Schedule: {
 //   screen: Example,

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, ActivityIndicator} from 'react-native';
+import { View, Text, ActivityIndicator } from 'react-native';
 import styles from './styles';
 
 const Loader = () => {

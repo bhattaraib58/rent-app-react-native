@@ -1,9 +1,9 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    marginHorizontal: 20,
+    marginHorizontal: 20
   },
   searchBar: {
     marginVertical: 10,
@@ -11,11 +11,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#0000',
     shadowColor: 'black',
     shadowOpacity: 5,
-    elevation: 3,
+    elevation: 3
   },
   inputBar: {
-    backgroundColor: 'white',
-  },
+    backgroundColor: 'white'
+  }
 });
 
 export default styles;

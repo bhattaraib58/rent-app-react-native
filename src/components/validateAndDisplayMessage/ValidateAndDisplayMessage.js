@@ -1,16 +1,10 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 
 import CustomRegex from '../../constants/regexType';
 import styles from './styles';
 
-const ValidateAndDisplayMessage = (
-  value,
-  name,
-  regex = CustomRegex.all,
-  minLength = 5,
-  maxLength = 50,
-) => {
+const ValidateAndDisplayMessage = (value, name, regex = CustomRegex.all, minLength = 5, maxLength = 50) => {
   if (!value) {
     return <Text style={styles.error}>* Required</Text>;
   } else if (value.length < minLength) {

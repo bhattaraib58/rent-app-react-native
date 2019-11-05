@@ -1,5 +1,5 @@
-import {createAppContainer} from 'react-navigation';
-import React, {Component} from 'react';
+import { createAppContainer } from 'react-navigation';
+import React, { Component } from 'react';
 
 import withConnect from './hoc/withConnect';
 import RootStack from './navigation/rootStack';

@@ -1,17 +1,17 @@
-import React, {useState} from 'react';
-import {View, Text, TextInput, Keyboard} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TextInput, Keyboard } from 'react-native';
 import styles from './styles';
 
 /**
- * Create Custom Input Data Field
+ * Create Custom Input Data Field.
  *
  * @param {*} {
  *   setInputData,
  *   placeholderName,
  *   keyboardType = "default",
  *   secureTextEntry = false,
- *   style = {}
- * }
+ *   style = {}.
+ * }.
  * @returns
  */
 const CustomTextInput = ({
@@ -19,7 +19,7 @@ const CustomTextInput = ({
   placeholderName,
   keyboardType = 'default',
   secureTextEntry = false,
-  style = {},
+  style = {}
 }) => {
   const [value, onChangeText] = useState();
   const [inputStyle, setInputStyle] = useState(styles.blurStyle);

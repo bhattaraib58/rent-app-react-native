@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Text, View, FlatList} from 'react-native';
+import React, { Component } from 'react';
+import { Text, View, FlatList } from 'react-native';
 import FlatInfoCardView from '../../components/flatInfoCardView/FlatInfoCardView';
 import withConnect from '../../hoc/withConnect';
 import styles from './styles';
@@ -11,12 +11,7 @@ class Favorite extends Component {
         <FlatList
           data={this.props.favoriteFlat.favoriteFlat}
           keyExtractor={flat => flat.id.toString()}
-          renderItem={flat => (
-            <FlatInfoCardView
-              flatInfo={flat.item}
-              flatDetailNavigation={this.props.navigation}
-            />
-          )}
+          renderItem={flat => <FlatInfoCardView flatInfo={flat.item} flatDetailNavigation={this.props.navigation} />}
           showsVerticalScrollIndicator={false}
         />
       </View>

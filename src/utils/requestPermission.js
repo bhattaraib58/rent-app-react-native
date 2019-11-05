@@ -1,11 +1,11 @@
-import {PermissionsAndroid} from 'react-native';
+import { PermissionsAndroid } from 'react-native';
 
 async function requestPermission(permissionName) {
   try {
     const granted = await PermissionsAndroid.request(permissionName, {
       rationale: {
-        title: 'Need Access To Location plz give access',
-      },
+        title: 'Need Access To Location plz give access'
+      }
     });
 
     if (granted === PermissionAndroid.RESULTS.GRANTED) {
@@ -18,10 +18,9 @@ async function requestPermission(permissionName) {
   }
 }
 
-export async function checkPermissionAndRerequestPermissionIfNeeded(
-  permissionName,
-) {
-  let permissionStatus = await PermissionsAndroid.check(permissionName);
+export async function checkPermissionAndRerequestPermissionIfNeeded(permissionName) {
+  const permissionStatus = await PermissionsAndroid.check(permissionName);
+
   if (!permissionStatus) {
     await requestPermission(permissionName);
   }

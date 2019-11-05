@@ -1,4 +1,4 @@
-import {createSwitchNavigator} from 'react-navigation';
+import { createSwitchNavigator } from 'react-navigation';
 
 import BottomNavigationStack from './BottomNavigationStack';
 import AppLoading from '../screen/appLoading/AppLoading';
@@ -7,18 +7,18 @@ import AuthStack from './AuthStack';
 const RootStack = createSwitchNavigator(
   {
     AuthLoading: {
-      screen: AppLoading,
+      screen: AppLoading
     },
     App: {
-      screen: BottomNavigationStack,
+      screen: BottomNavigationStack
     },
     Auth: {
-      screen: AuthStack,
-    },
+      screen: AuthStack
+    }
   },
   {
-    initialRouteName: 'AuthLoading',
-  },
+    initialRouteName: 'AuthLoading'
+  }
 );
 
 export default RootStack;

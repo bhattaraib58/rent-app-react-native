@@ -1,14 +1,14 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import styles from './styles';
 
 /**
- * Custom Back Navigation with Transparency
+ * Custom Back Navigation with Transparency.
  *
- * @param {*} { navigation }
+ * @param {*} { Navigation }.
  * @returns
  */
-const TranparentBackNavigation = ({navigation}) => {
+const TranparentBackNavigation = ({ navigation }) => {
   return (
     <TouchableOpacity onPress={navigation.goBack} style={styles.container}>
       <View style={styles.backNavigate}></View>

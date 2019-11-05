@@ -1,12 +1,5 @@
-import React, {Component} from 'react';
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  ScrollView,
-  TouchableNativeFeedback,
-} from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, Image, StyleSheet, ScrollView, TouchableNativeFeedback } from 'react-native';
 
 import FlatFacilities from '../../components/flatFacilities/FlatFacilities';
 import TagsContainer from '../../components/tagsContainer/TagsContainer';
@@ -19,7 +12,7 @@ import styles from './styles';
 
 export class FlatDetails extends Component {
   render() {
-    const {navigation} = this.props;
+    const { navigation } = this.props;
     const flatInfo = navigation.getParam('flatInfo');
 
     return (
@@ -29,10 +22,11 @@ export class FlatDetails extends Component {
             <TouchableNativeFeedback
               onPress={() =>
                 navigation.navigate('FlatImageCarousel', {
-                  flatImages: flatInfo.images,
+                  flatImages: flatInfo.images
                 })
-              }>
-              <Image source={{uri: flatInfo.images[0]}} style={styles.image} />
+              }
+            >
+              <Image source={{ uri: flatInfo.images[0] }} style={styles.image} />
             </TouchableNativeFeedback>
 
             <FavoriteFlat flatInfo={flatInfo} />
@@ -40,9 +34,10 @@ export class FlatDetails extends Component {
             <TouchableNativeFeedback
               onPress={() =>
                 navigation.navigate('MapboxView', {
-                  coordinate: flatInfo.coordinate,
+                  coordinate: flatInfo.coordinate
                 })
-              }>
+              }
+            >
               <View style={styles.mapBoxView}>
                 <MapboxView coordinate={flatInfo.coordinate} />
               </View>
@@ -52,8 +47,7 @@ export class FlatDetails extends Component {
           <View style={styles.mainInfo}>
             <View style={styles.mainInfoLeft}>
               <Text style={styles.price}>
-                {flatInfo.Currency} {flatInfo.priceMin} - {flatInfo.priceMax}/
-                {flatInfo.payType}
+                {flatInfo.Currency} {flatInfo.priceMin} - {flatInfo.priceMax}/{flatInfo.payType}
               </Text>
               <Text style={styles.location}>{flatInfo.location}</Text>
             </View>

@@ -1,14 +1,14 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 import styles from './styles';
 
 /**
- * Create Textbox for view
+ * Create Textbox for view.
  *
- * @param {*} { textName, textStyle }
+ * @param {*} { TextName, textStyle }.
  * @returns
  */
-const CustomText = ({textName, textStyle}) => {
+const CustomText = ({ textName, textStyle }) => {
   return <Text style={[styles.textStyle, textStyle]}>{textName}:</Text>;
 };
 

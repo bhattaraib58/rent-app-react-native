@@ -1,17 +1,17 @@
-import {StyleSheet} from 'react-native';
-import {subTextColor} from '../../constants/color';
+import { StyleSheet } from 'react-native';
+import { subTextColor } from '../../constants/color';
 
 const styles = StyleSheet.create({
   container: {
-    paddingBottom: 60,
+    paddingBottom: 60
   },
   imageContainer: {
-    position: 'relative',
+    position: 'relative'
   },
   image: {
     backgroundColor: 'white',
     width: '100%',
-    height: 400,
+    height: 400
   },
   mainInfo: {
     flexDirection: 'row',
@@ -28,15 +28,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#0000',
     shadowColor: 'black',
     shadowOpacity: 2,
-    elevation: 1,
+    elevation: 1
   },
   price: {
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 20
   },
   location: {
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 16
   },
   mapBoxView: {
     height: 170,
@@ -44,19 +44,19 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     left: '10%',
-    right: '10%',
+    right: '10%'
   },
   flatInfo: {
     marginHorizontal: 20,
-    marginVertical: 10,
+    marginVertical: 10
   },
   details: {
     color: subTextColor,
     width: '100%',
     fontSize: 16,
     textAlign: 'justify',
-    alignSelf: 'stretch',
-  },
+    alignSelf: 'stretch'
+  }
 });
 
 export default styles;

@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {iconColor} from '../../constants/color';
+import { StyleSheet } from 'react-native';
+import { iconColor } from '../../constants/color';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,16 +9,16 @@ const styles = StyleSheet.create({
     shadowOpacity: 3,
     elevation: 3,
 
-    padding: 1,
+    padding: 1
   },
   imageContainer: {
-    position: 'relative',
+    position: 'relative'
   },
   image: {
     width: '100%',
     minWidth: 300,
     height: 300,
-    borderRadius: 8,
+    borderRadius: 8
   },
   flatInfo: {
     position: 'absolute',
@@ -37,12 +37,12 @@ const styles = StyleSheet.create({
 
     shadowColor: 'black',
     shadowOpacity: 3,
-    elevation: 3,
+    elevation: 3
   },
   flatInfoHeader: {
     fontWeight: 'bold',
     fontSize: 20,
-    margin: 5,
+    margin: 5
   },
   flatInfosubHeader: {},
   iconContainer: {
@@ -52,13 +52,13 @@ const styles = StyleSheet.create({
 
     shadowColor: 'black',
     shadowOpacity: 2,
-    elevation: 2,
+    elevation: 2
   },
   iconTextStyle: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 25,
-  },
+    fontSize: 25
+  }
 });
 
 export default styles;

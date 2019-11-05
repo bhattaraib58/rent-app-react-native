@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {iconColor} from '../../constants/color';
+import { StyleSheet } from 'react-native';
+import { iconColor } from '../../constants/color';
 
 const styles = StyleSheet.create({
   container: {
@@ -21,14 +21,14 @@ const styles = StyleSheet.create({
 
     shadowColor: 'black',
     shadowOpacity: 5,
-    elevation: 3,
+    elevation: 3
   },
   textStyle: {
     color: 'white',
     fontWeight: 'bold',
     fontSize: 15,
-    paddingLeft: 5,
-  },
+    paddingLeft: 5
+  }
 });
 
 export default styles;

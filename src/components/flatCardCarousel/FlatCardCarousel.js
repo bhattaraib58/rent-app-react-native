@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {FlatList, View, Text} from 'react-native';
+import React, { Component } from 'react';
+import { FlatList, View, Text } from 'react-native';
 
 import FlatInfoCardView from '../flatInfoCardView/FlatInfoCardView';
 import styles from './styles';
@@ -13,7 +13,7 @@ import styles from './styles';
  * @extends {Component}
  */
 export default class FlatCardCarousel extends Component {
-  _renderItem({item, index}) {
+  _renderItem({ item, index }) {
     return (
       <FlatInfoCardView
         flatInfo={item}
@@ -27,21 +27,15 @@ export default class FlatCardCarousel extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={[styles.title, this.props.carouselTitleStyle]}>
-          {this.props.title}
-        </Text>
+        <Text style={[styles.title, this.props.carouselTitleStyle]}>{this.props.title}</Text>
         <FlatList
-          horizontal={
-            this.props.horizontal !== undefined ? this.props.horizontal : true
-          }
+          horizontal={this.props.horizontal !== undefined ? this.props.horizontal : true}
           data={this.props.flatData}
           keyExtractor={(item, index) => index.toString()}
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
           renderItem={flatInfo => {
-            let _renderItem = this.props._renderItem
-              ? this.props._renderItem.bind(this)
-              : this._renderItem.bind(this);
+            const _renderItem = this.props._renderItem ? this.props._renderItem.bind(this) : this._renderItem.bind(this);
 
             return _renderItem(flatInfo);
           }}
