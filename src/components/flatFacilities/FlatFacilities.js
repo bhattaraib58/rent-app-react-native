@@ -34,8 +34,8 @@ function FlatFacilities({ bed, bathRoom, area }) {
 }
 
 FlatFacilities.propTypes = {
-  bed: PropTypes.string.isRequired,
-  bathRoom: PropTypes.string.isRequired,
+  bed: PropTypes.number.isRequired,
+  bathRoom: PropTypes.number.isRequired,
   area: PropTypes.string.isRequired
 };
 
