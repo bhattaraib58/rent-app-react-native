@@ -1,5 +1,6 @@
 import {FlatList, RefreshControl} from 'react-native';
 import React, {useEffect} from 'react';
+import firestore from '@react-native-firebase/firestore';
 
 import FlatInfoCardView from '../flatInfoCardView/FlatInfoCardView';
 
