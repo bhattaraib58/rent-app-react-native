@@ -1,18 +1,19 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import auth from '@react-native-firebase/auth';
 import { View, SafeAreaView, ScrollView, Text, TouchableOpacity } from 'react-native';
-import auth, { firebase } from '@react-native-firebase/auth';
 
-import ValidateAndDisplayMessage from '../../components/validateAndDisplayMessage/ValidateAndDisplayMessage';
-import CustomTextInput from '../../components/customTextInput/CustomTextInput';
-import StatusDisplay from '../../components/statusDisplay/StatusDisplay';
-import PageHeader from '../../components/pageHeader/PageHeader';
-import CustomText from '../../components/customText/CustomText';
 import Button from '../../components/button/Button';
 import CustomRegex from '../../constants/regexType';
 import Loader from '../../components/loader/Loader';
-import styles from './styles';
+import PageHeader from '../../components/pageHeader/PageHeader';
+import CustomText from '../../components/customText/CustomText';
+import StatusDisplay from '../../components/statusDisplay/StatusDisplay';
+import CustomTextInput from '../../components/customTextInput/CustomTextInput';
+import ValidateAndDisplayMessage from '../../components/validateAndDisplayMessage/ValidateAndDisplayMessage';
 
-export default class SignIn extends Component {
+import styles from './styles';
+class SignIn extends Component {
   constructor(props) {
     super(props);
 
@@ -119,7 +120,7 @@ export default class SignIn extends Component {
               this.props.navigation.navigate('Signup');
             }}
           >
-            <Text style={styles.linkText}>Signup ></Text>
+            <Text style={styles.linkText}>Signup &nbsp;{'>'}</Text>
           </TouchableOpacity>
         </View>
 
@@ -128,3 +129,9 @@ export default class SignIn extends Component {
     );
   }
 }
+
+SignIn.propTypes = {
+  navigation: PropTypes.any
+};
+
+export default SignIn;

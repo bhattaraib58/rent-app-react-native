@@ -1,5 +1,12 @@
 import { LOGIN_ACTIONS } from '../actions/types';
 
+/**
+ * Login Reducer.
+ *
+ * @param {*} [state]
+ * @param {*} action
+ * @returns {Object} Updated State.
+ */
 const loginReducer = (state = [], action) => {
   switch (action.type) {
     case LOGIN_ACTIONS.LOGIN_REQUEST:

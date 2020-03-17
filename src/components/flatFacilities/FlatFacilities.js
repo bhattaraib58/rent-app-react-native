@@ -1,9 +1,10 @@
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { View, Text } from 'react-native';
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
+import { View, Text } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { subTextColor } from '../../constants/color';
+
 import styles from './styles';
 
 /**

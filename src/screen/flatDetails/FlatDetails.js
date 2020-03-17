@@ -1,16 +1,19 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, ScrollView, TouchableNativeFeedback } from 'react-native';
+import { View, Text, Image, ScrollView, TouchableNativeFeedback } from 'react-native';
 
-import FlatFacilities from '../../components/flatFacilities/FlatFacilities';
-import TagsContainer from '../../components/tagsContainer/TagsContainer';
+import FlatRating from '../../components/flatRating/FlatRating';
+import FlatOptions from '../../components/flatOptions/FlatOptions';
 import FlatOffering from '../../components/flatOffering/FlatOffering';
 import FavoriteFlat from '../../components/favoriteFlat/FavoriteFlat';
-import FlatOptions from '../../components/flatOptions/FlatOptions';
-import FlatRating from '../../components/flatRating/FlatRating';
+import TagsContainer from '../../components/tagsContainer/TagsContainer';
+import FlatFacilities from '../../components/flatFacilities/FlatFacilities';
+
 import MapboxView from '../mapboxView/MapboxView';
+
 import styles from './styles';
 
-export class FlatDetails extends Component {
+class FlatDetails extends Component {
   render() {
     const { navigation } = this.props;
     const flatInfo = navigation.getParam('flatInfo');
@@ -69,5 +72,9 @@ export class FlatDetails extends Component {
     );
   }
 }
+
+FlatDetails.propTypes = {
+  navigation: PropTypes.any
+};
 
 export default FlatDetails;

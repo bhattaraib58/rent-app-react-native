@@ -1,18 +1,21 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Text, View, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
 import auth, { firebase } from '@react-native-firebase/auth';
+import { Text, View, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
 
-import ValidateAndDisplayMessage from '../../components/validateAndDisplayMessage/ValidateAndDisplayMessage';
-import CustomTextInput from '../../components/customTextInput/CustomTextInput';
-import StatusDisplay from '../../components/statusDisplay/StatusDisplay';
-import PageHeader from '../../components/pageHeader/PageHeader';
-import CustomText from '../../components/customText/CustomText';
 import Loader from '../../components/loader/Loader';
 import Button from '../../components/button/Button';
+import PageHeader from '../../components/pageHeader/PageHeader';
+import CustomText from '../../components/customText/CustomText';
+import StatusDisplay from '../../components/statusDisplay/StatusDisplay';
+import CustomTextInput from '../../components/customTextInput/CustomTextInput';
+import ValidateAndDisplayMessage from '../../components/validateAndDisplayMessage/ValidateAndDisplayMessage';
+
 import CustomRegex from '../../constants/regexType';
+
 import styles from './styles';
 
-export default class Signup extends Component {
+class Signup extends Component {
   constructor(props) {
     super(props);
 
@@ -40,9 +43,9 @@ export default class Signup extends Component {
     return messageView;
   }
 
-  matchPasswordAndDisplayMessage(password, repassword) {
+  matchPasswordAndDisplayMessage(password, rePassword) {
     this.errors.add("Password Don't Match");
-    if (password === repassword) {
+    if (password === rePassword) {
       this.errors.delete("Password Don't Match");
 
       return null;
@@ -64,11 +67,11 @@ export default class Signup extends Component {
             .currentUser.updateProfile({
               displayName: this.state.name
             })
-            .then(data => {
+            .then(() => {
               if (!firebase.auth().currentUser.emailVerified) {
                 this.setState({
                   signUpMessageType: 'success',
-                  signUpMessage: 'Signup Sucessful ! Please Check Inbox For Verification !',
+                  signUpMessage: 'Signup Successful ! Please Check Inbox For Verification !',
                   submissionStatus: false
                 });
               }
@@ -169,7 +172,7 @@ export default class Signup extends Component {
               this.props.navigation.navigate('SignIn');
             }}
           >
-            <Text style={styles.linkText}>Sign In ></Text>
+            <Text style={styles.linkText}>Sign In&nbsp;{'>'}</Text>
           </TouchableOpacity>
         </View>
 
@@ -178,3 +181,9 @@ export default class Signup extends Component {
     );
   }
 }
+
+Signup.propTypes = {
+  navigation: PropTypes.any
+};
+
+export default Signup;

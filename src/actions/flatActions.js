@@ -1,4 +1,6 @@
+/* eslint-disable require-jsdoc */
 import ApiConstants from '../constants/apiConstants';
+
 import { FLAT_ACTIONS } from './types';
 
 export const flatInfoRequest = () => ({

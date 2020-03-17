@@ -33,6 +33,13 @@ function removeFlatFromFavorite(favoriteFlat, flatInfo) {
   });
 }
 
+/**
+ * Favorite Flat Reducer.
+ *
+ * @param {*} [state]
+ * @param {*} action
+ * @returns {Object} Updated State.
+ */
 export const favoriteFlatReducer = (state = initState, action) => {
   switch (action.type) {
     case FAVOURITE_FLAT.ADD_FLAT_TO_FAVORITE:

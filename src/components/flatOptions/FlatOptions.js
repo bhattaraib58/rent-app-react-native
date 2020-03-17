@@ -1,8 +1,10 @@
-import { View } from 'react-native';
 import React from 'react';
+import { View } from 'react-native';
 
 import { CONTACT, BOOK } from '../../constants/text';
+
 import Button from '../button/Button';
+
 import styles from './styles';
 
 /**

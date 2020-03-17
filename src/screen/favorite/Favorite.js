@@ -1,7 +1,11 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Text, View, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
+
 import FlatInfoCardView from '../../components/flatInfoCardView/FlatInfoCardView';
+
 import withConnect from '../../hoc/withConnect';
+
 import styles from './styles';
 
 class Favorite extends Component {
@@ -18,5 +22,10 @@ class Favorite extends Component {
     );
   }
 }
+
+Favorite.propTypes = {
+  favoriteFlat: PropTypes.any,
+  navigation: PropTypes.any
+};
 
 export default withConnect(Favorite);

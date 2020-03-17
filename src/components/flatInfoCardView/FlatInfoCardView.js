@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Text, View, Image, TouchableWithoutFeedback } from 'react-native';
 
 import styles from './styles';
+
 import FavoriteFlat from '../favoriteFlat/FavoriteFlat';
 import FlatLocation from '../flatLocation/FlatLocation';
 import FlatFacilities from '../flatFacilities/FlatFacilities';

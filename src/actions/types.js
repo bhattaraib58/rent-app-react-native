@@ -23,7 +23,7 @@ export const LOGIN_ACTIONS = {
   }
 };
 
-// favourite flat
+// Favorite flat
 export const FAVOURITE_FLAT = {
   ADD_FLAT_TO_FAVORITE: 'ADD_FLAT_TO_FAVORITE',
   REMOVE_FLAT_FROM_FAVORITE: 'REMOVE_FLAT_FROM_FAVORITE'
