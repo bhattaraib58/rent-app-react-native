@@ -1,25 +1,12 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FlatList, View, Text } from 'react-native';
 
 import FlatInfoCardView from '../flatInfoCardView/FlatInfoCardView';
+
 import styles from './styles';
 
-/* eslint-disable */
-
-/**
- *  Flat Card Carousel.
- *
- * @props {horizontal - boolean}, {_renderItem(flatInfo) - renderFunction } , {flatData -  flatInfo data array}
- * ,navigation, carouselTitleStyle, carouselContainerStyle, carouselImageStyle
- * @extends {Component}
- */
-export default class FlatCardCarousel extends Component {
-  /**
-   *
-   *
-   * @param {*} Param { item, index }.
-   * @returns
-   */
+class FlatCardCarousel extends Component {
   _renderItem({ item }) {
     return (
       <FlatInfoCardView
@@ -31,12 +18,6 @@ export default class FlatCardCarousel extends Component {
     );
   }
 
-  /**
-   * Render.
-   *
-   * @returns
-   * @memberof FlatCardCarousel
-   */
   render() {
     return (
       <View style={styles.container}>
@@ -59,3 +40,16 @@ export default class FlatCardCarousel extends Component {
     );
   }
 }
+
+FlatCardCarousel.propTypes = {
+  _renderItem: PropTypes.any,
+  carouselContainerStyle: PropTypes.any,
+  carouselImageStyle: PropTypes.any,
+  carouselTitleStyle: PropTypes.any,
+  flatData: PropTypes.any,
+  horizontal: PropTypes.any,
+  navigation: PropTypes.any,
+  title: PropTypes.any
+};
+
+export default FlatCardCarousel;

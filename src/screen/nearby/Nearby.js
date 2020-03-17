@@ -3,7 +3,9 @@ import { View, Keyboard } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 
 import FlatListView from '../../components/flatListView/FlatListView';
+
 import withConnect from '../../hoc/withConnect';
+
 import styles from './styles';
 
 export class Nearby extends Component {

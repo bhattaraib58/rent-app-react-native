@@ -1,7 +1,6 @@
-import { FlatList, RefreshControl } from 'react-native';
-import firestore from '@react-native-firebase/firestore';
-import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
+import { FlatList, RefreshControl } from 'react-native';
 
 import FlatInfoCardView from '../flatInfoCardView/FlatInfoCardView';
 
@@ -12,7 +11,6 @@ import FlatInfoCardView from '../flatInfoCardView/FlatInfoCardView';
  * @returns
  */
 function FlatListView({ flat, flatInfoRequest, navigation }) {
-  // its like component did mount
   useEffect(() => {
     flatInfoRequest();
   }, []);

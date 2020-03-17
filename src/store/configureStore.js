@@ -1,13 +1,10 @@
-import { createStore, compose, applyMiddleware } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist';
-import AsyncStorage from '@react-native-community/async-storage';
 import createSagaMiddleware from 'redux-saga';
+import { persistStore, persistReducer } from 'redux-persist';
+import { createStore, compose, applyMiddleware } from 'redux';
+import AsyncStorage from '@react-native-community/async-storage';
 
-// import { offline } from '@redux-offline/redux-offline';
-// import offlineConfig from '@redux-offline/redux-offline/lib/defaults';
-
-import rootReducers from '../reducers';
 import sagas from '../sagas';
+import rootReducers from '../reducers';
 
 const config = {
   key: 'root',
@@ -26,15 +23,13 @@ const store = createStore(
   compose(
     applyMiddleware(sagaMiddleware),
     reduxDevtool
-    // offline(offlineConfig)
   )
 );
 
 const persistor = persistStore(store);
 
-const configureStore = () => {
-  return { persistor, store };
-};
+// eslint-disable-next-line require-jsdoc
+const configureStore = () => ({ persistor, store });
 
 sagaMiddleware.run(sagas);
 

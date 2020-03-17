@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { View } from 'react-native';
+import React, { Component } from 'react';
 import MapboxGL from '@react-native-mapbox-gl/maps';
 
 import { MAPBOX_API_KEY } from '../../constants/ApiKey';
+
 import { styles } from './styles';
 
 MapboxGL.setAccessToken(MAPBOX_API_KEY);
 
-export class MapboxView extends Component {
+class MapboxView extends Component {
   render() {
     let coordinate = null;
 
@@ -25,5 +27,10 @@ export class MapboxView extends Component {
     );
   }
 }
+
+MapboxView.propTypes = {
+  coordinate: PropTypes.any,
+  navigation: PropTypes.any
+};
 
 export default MapboxView;

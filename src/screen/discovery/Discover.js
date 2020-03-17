@@ -1,12 +1,16 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { ScrollView, RefreshControl } from 'react-native';
 
-import FlatCategoryCardView from '../../components/flatCategoryCardView/FlatCategoryCardView';
 import FlatCardCarousel from '../../components/flatCardCarousel/FlatCardCarousel';
+import FlatCategoryCardView from '../../components/flatCategoryCardView/FlatCategoryCardView';
+
 import withConnect from '../../hoc/withConnect';
+
 import styles from './styles';
-export class Discover extends Component {
-  _renderItem({ item, index }) {
+
+class Discover extends Component {
+  _renderItem({ item }) {
     return (
       <FlatCategoryCardView
         flatInfo={item}
@@ -59,5 +63,13 @@ export class Discover extends Component {
     );
   }
 }
+
+Discover.propTypes = {
+  carouselContainerStyle: PropTypes.any,
+  carouselImageStyle: PropTypes.any,
+  flat: PropTypes.any,
+  flatInfoRequest: PropTypes.any,
+  navigation: PropTypes.any
+};
 
 export default withConnect(Discover);

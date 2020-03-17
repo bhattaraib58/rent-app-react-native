@@ -1,11 +1,13 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import auth from '@react-native-firebase/auth';
 import { View, Text, Image, Animated } from 'react-native';
 
 import { companyLogo } from '../../constants/image';
-import styles from './style';
-import auth, { firebase } from '@react-native-firebase/auth';
 
-export class AppLoading extends Component {
+import styles from './style';
+
+class AppLoading extends Component {
   constructor(props) {
     super(props);
 
@@ -57,5 +59,9 @@ export class AppLoading extends Component {
     );
   }
 }
+
+AppLoading.propTypes = {
+  navigation: PropTypes.any
+};
 
 export default AppLoading;

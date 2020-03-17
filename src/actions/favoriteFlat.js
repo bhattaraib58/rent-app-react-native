@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import { FAVOURITE_FLAT } from './types';
 
 export const addFlatToFavorite = flatInfo => ({

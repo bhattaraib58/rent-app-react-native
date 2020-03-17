@@ -1,7 +1,7 @@
 import { put } from 'redux-saga/effects';
 
-import * as FlatInfoActions from '../actions/flatActions';
 import ApiConstants from '../constants/apiConstants';
+import * as FlatInfoActions from '../actions/flatActions';
 
 /**
  * Async Request For Flat Info And Get Results.

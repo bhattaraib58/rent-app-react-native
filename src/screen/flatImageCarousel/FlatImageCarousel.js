@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { View, Dimensions, Image, FlatList } from 'react-native';
 
 import styles from './styles';
 
-export class FlatImageCarousel extends Component {
+class FlatImageCarousel extends Component {
   constructor(props) {
     super(props);
 
@@ -21,7 +22,7 @@ export class FlatImageCarousel extends Component {
     return <Image source={{ uri: item }} style={styles.image} />;
   }
 
-  _onViewableItemsChanged({ viewableItems, changed }) {
+  _onViewableItemsChanged({ viewableItems }) {
     if (viewableItems[0].isViewable) {
       this.setState({
         currentIndex: viewableItems[0].key
@@ -34,7 +35,7 @@ export class FlatImageCarousel extends Component {
   };
 
   slideIndicatorIcon(index) {
-    const activeIndexIndicator = index == this.state.currentIndex ? styles.activeIndicator : {};
+    const activeIndexIndicator = index === this.state.currentIndex ? styles.activeIndicator : {};
 
     return <View style={[styles.indicator, activeIndexIndicator]} key={index}></View>;
   }
@@ -66,5 +67,9 @@ export class FlatImageCarousel extends Component {
     );
   }
 }
+
+FlatImageCarousel.propTypes = {
+  navigation: PropTypes.any
+};
 
 export default FlatImageCarousel;

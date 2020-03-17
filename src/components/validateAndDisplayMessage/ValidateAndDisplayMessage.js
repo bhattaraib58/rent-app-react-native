@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Text } from 'react-native';
 
 import CustomRegex from '../../constants/regexType';
+
 import styles from './styles';
 
 /**

@@ -1,7 +1,7 @@
 import { PermissionsAndroid } from 'react-native';
 
 /**
- * Request For Loaction Permission.
+ * Request For Location Permission.
  *
  * @param {*} permissionName
  * @param {*} title

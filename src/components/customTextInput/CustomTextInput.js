@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+/* eslint-disable require-jsdoc */
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import { TextInput } from 'react-native';
+
 import styles from './styles';
 
 /**

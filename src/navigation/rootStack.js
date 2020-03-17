@@ -1,8 +1,9 @@
 import { createSwitchNavigator } from 'react-navigation';
 
-import BottomNavigationStack from './BottomNavigationStack';
-import AppLoading from '../screen/appLoading/AppLoading';
 import AuthStack from './AuthStack';
+import BottomNavigationStack from './BottomNavigationStack';
+
+import AppLoading from '../screen/appLoading/AppLoading';
 
 const RootStack = createSwitchNavigator(
   {

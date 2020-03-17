@@ -1,14 +1,16 @@
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import Icon from 'react-native-vector-icons/FontAwesome';
+/* eslint-disable react/prop-types,react/display-name */
 import React from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import { selectedTextColor, subTextColor } from '../constants/color';
-import Favorite from '../screen/favorite/Favorite';
-import DiscoverStack from './DiscoverStack';
-import NearbyStack from './NearbyStack';
-import Example from '../screen/example/Example';
 
-/* eslint-disable react/prop-types,react/display-name */
+import Favorite from '../screen/favorite/Favorite';
+
+import NearbyStack from './NearbyStack';
+import DiscoverStack from './DiscoverStack';
+
+import Example from '../screen/example/Example';
 
 const BottomNavigationStack = createBottomTabNavigator(
   {

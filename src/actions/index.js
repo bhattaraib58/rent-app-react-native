@@ -1,5 +1,5 @@
-import { flatInfoRequest, flatInfoResponse, flatInfoFailed } from './flatActions';
 import { addFlatToFavorite, removeFlatFromFavorite } from './favoriteFlat';
+import { flatInfoRequest, flatInfoResponse, flatInfoFailed } from './flatActions';
 
 export const ActionCreators = {
   flatInfoRequest: flatInfoRequest,

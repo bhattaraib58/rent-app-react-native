@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
 import Snackbar from 'react-native-snackbar';
+import React, { useState, useEffect } from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import styles from './styles';
+
 import withConnect from '../../hoc/withConnect';
+
 import { checkDataExists } from '../../utils/checkDataExists';
 
 /**
@@ -17,6 +19,10 @@ import { checkDataExists } from '../../utils/checkDataExists';
 function FavoriteFlat({ addFlatToFavorite, removeFlatFromFavorite, favoriteFlat, flatInfo }) {
   const [favoriteFlatAdded, setFavoriteFlatAdded] = useState(false);
 
+  /**
+   * Set Flat As Added/Removed From Favorite List.
+   *
+   */
   const setFavouriteAdded = () => {
     setFavoriteFlatAdded(!favoriteFlatAdded);
 

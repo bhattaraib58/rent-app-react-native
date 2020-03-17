@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
 
 import styles from './styles';
 

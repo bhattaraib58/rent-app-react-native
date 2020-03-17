@@ -6,6 +6,13 @@ const initState = {
   error: {}
 };
 
+/**
+ * Flat Reducer.
+ *
+ * @param {*} [state]
+ * @param {*} action
+ * @returns {Object} Updated State.
+ */
 const flatReducer = (state = initState, action) => {
   switch (action.type) {
     case FLAT_ACTIONS.VIEW_ALL_FLATS.REQUEST:

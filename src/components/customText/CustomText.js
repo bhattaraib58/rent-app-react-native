@@ -5,7 +5,7 @@ import { Text } from 'react-native';
 import styles from './styles';
 
 /**
- * Create Textbox for view.
+ * Create Text for view.
  *
  * @param {*} { TextName, textStyle }.
  * @returns

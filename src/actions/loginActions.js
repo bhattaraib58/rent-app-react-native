@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import { LOGIN_ACTIONS } from './types';
 
 export const requestLogin = (username, password) => ({

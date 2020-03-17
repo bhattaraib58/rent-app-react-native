@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { firebase } from '@react-native-firebase/auth';
 import { View, Text, TouchableOpacity } from 'react-native';
-import auth, { firebase } from '@react-native-firebase/auth';
 
 export class Example extends Component {
   logoutUser() {
@@ -8,10 +8,12 @@ export class Example extends Component {
       .auth()
       .signOut()
       .then(() => {
-        console.log('logouted');
+        // eslint-disable-next-line no-console
+        console.warn('logouted');
       })
-      .catch(() => {
-        console.log('some error occured');
+      .catch(err => {
+        // eslint-disable-next-line no-console
+        console.warn('some error occured', err);
       });
   }
 
