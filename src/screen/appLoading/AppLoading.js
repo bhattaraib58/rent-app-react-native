@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import {View, Text, Image, Animated} from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, Image, Animated } from 'react-native';
 
-import {companyLogo} from '../../constants/image';
+import { companyLogo } from '../../constants/image';
 import styles from './style';
-import auth, {firebase} from '@react-native-firebase/auth';
+import auth, { firebase } from '@react-native-firebase/auth';
 
 export class AppLoading extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export class AppLoading extends Component {
 
     this.state = {
       fadeIn: new Animated.Value(0),
-      fadeOut: new Animated.Value(1),
+      fadeOut: new Animated.Value(1)
     };
 
     this._onAuthStateChanged = this._onAuthStateChanged.bind(this);
@@ -26,7 +26,7 @@ export class AppLoading extends Component {
     Animated.timing(this.state.fadeIn, {
       toValue: 1,
       duration: 0,
-      useNativeDriver: true,
+      useNativeDriver: true
     }).start(() => this.fadeOut());
   }
 
@@ -34,7 +34,7 @@ export class AppLoading extends Component {
     Animated.timing(this.state.fadeIn, {
       toValue: 0,
       duration: 2500,
-      useNativeDriver: true,
+      useNativeDriver: true
     }).start(() => this._onAuthStateChanged());
   }
 
@@ -47,7 +47,7 @@ export class AppLoading extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Animated.View style={{opacity: this.state.fadeIn}}>
+        <Animated.View style={{ opacity: this.state.fadeIn }}>
           <View style={styles.container}>
             <Image source={companyLogo} style={styles.logoStyle} />
             <Text style={styles.companyName}>Rent App</Text>

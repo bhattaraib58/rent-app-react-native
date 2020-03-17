@@ -1,10 +1,15 @@
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 import React from 'react';
 
 import styles from './styles';
 
-export default function FlatOffering() {
+/**
+ * Flat Offering Component.
+ *
+ * @returns
+ */
+function FlatOffering() {
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>
@@ -41,3 +46,5 @@ export default function FlatOffering() {
     </View>
   );
 }
+
+export default FlatOffering;

@@ -1,5 +1,5 @@
-import {textColor} from '../../constants/color';
-import {StyleSheet} from 'react-native';
+import { textColor } from '../../constants/color';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   buttonStyle: {
@@ -13,14 +13,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     shadowColor: 'black',
     shadowOpacity: 5,
-    elevation: 3,
+    elevation: 3
   },
   textStyle: {
     fontSize: 16,
     fontWeight: 'bold',
     textTransform: 'uppercase',
-    color: textColor,
-  },
+    color: textColor
+  }
 });
 
 export default styles;

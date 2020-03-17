@@ -1,16 +1,21 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import PropTypes from 'prop-types';
+import { Text } from 'react-native';
 
 import CustomRegex from '../../constants/regexType';
 import styles from './styles';
 
-const ValidateAndDisplayMessage = (
-  value,
-  name,
-  regex = CustomRegex.all,
-  minLength = 5,
-  maxLength = 50,
-) => {
+/**
+ * Validate And Display Message Component.
+ *
+ * @param {*} value
+ * @param {*} name
+ * @param {*} [regex=CustomRegex.all]
+ * @param {number} [minLength=5]
+ * @param {number} [maxLength=50]
+ * @returns
+ */
+function ValidateAndDisplayMessage(value, name, regex = CustomRegex.all, minLength = 5, maxLength = 50) {
   if (!value) {
     return <Text style={styles.error}>* Required</Text>;
   } else if (value.length < minLength) {
@@ -30,6 +35,14 @@ const ValidateAndDisplayMessage = (
   } else {
     return null;
   }
+}
+
+ValidateAndDisplayMessage.propTypes = {
+  value: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  regex: PropTypes.any,
+  minLength: PropTypes.number,
+  maxLength: PropTypes.number
 };
 
 export default ValidateAndDisplayMessage;

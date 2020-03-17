@@ -1,11 +1,18 @@
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
+import PropTypes from 'prop-types';
 import React from 'react';
 
-import {subTextColor} from '../../constants/color';
+import { subTextColor } from '../../constants/color';
 import styles from './styles';
 
-export default function FlatFacilities({bed, bathRoom, area}) {
+/**
+ * Flat Facilities View.
+ *
+ * @param {*} Props { bed, bathRoom, area }.
+ * @returns
+ */
+function FlatFacilities({ bed, bathRoom, area }) {
   return (
     <View style={styles.flatDetailIcon}>
       <View style={styles.facilitiesContainer}>
@@ -25,3 +32,11 @@ export default function FlatFacilities({bed, bathRoom, area}) {
     </View>
   );
 }
+
+FlatFacilities.propTypes = {
+  bed: PropTypes.number.isRequired,
+  bathRoom: PropTypes.number.isRequired,
+  area: PropTypes.string.isRequired
+};
+
+export default FlatFacilities;

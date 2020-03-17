@@ -1,13 +1,12 @@
 /**
- * Check Data exists in array
+ * Check Data exists in array.
  *
- * @export
  * @param {*} dataArray
  * @param {*} data
  * @returns
  */
 export function checkDataExists(dataArray, data) {
-  let result = dataArray.filter(dataInfo => {
+  const result = dataArray.filter(dataInfo => {
     return dataInfo.id === data.id;
   });
 

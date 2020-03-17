@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   loader: {
@@ -13,8 +13,8 @@ const styles = StyleSheet.create({
 
     flex: 1,
     opacity: 0.5,
-    backgroundColor: 'white',
-  },
+    backgroundColor: 'white'
+  }
 });
 
 export default styles;

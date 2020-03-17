@@ -1,17 +1,32 @@
-import {FAVOURITE_FLAT} from '../actions/types';
-import {checkDataExists} from '../utils/checkDataExists';
+import { FAVOURITE_FLAT } from '../actions/types';
+import { checkDataExists } from '../utils/checkDataExists';
 
 const initState = {
-  favoriteFlat: [],
+  favoriteFlat: []
 };
 
+/**
+ * Add Flat Info To Favorite Flat Array.
+ *
+ * @param {*} favoriteFlat
+ * @param {*} flatInfo
+ * @returns
+ */
 function addFlatToFavorite(favoriteFlat, flatInfo) {
   if (!checkDataExists(favoriteFlat, flatInfo)) {
     favoriteFlat.push(flatInfo);
   }
+
   return favoriteFlat;
 }
 
+/**
+ * Remove Flat Info From Favorite Flat Array.
+ *
+ * @param {*} favoriteFlat
+ * @param {*} flatInfo
+ * @returns
+ */
 function removeFlatFromFavorite(favoriteFlat, flatInfo) {
   return favoriteFlat.filter(dataInfo => {
     return dataInfo.id !== flatInfo.id;
@@ -21,20 +36,14 @@ function removeFlatFromFavorite(favoriteFlat, flatInfo) {
 export const favoriteFlatReducer = (state = initState, action) => {
   switch (action.type) {
     case FAVOURITE_FLAT.ADD_FLAT_TO_FAVORITE:
-      state.favoriteFlat = addFlatToFavorite(
-        state.favoriteFlat,
-        action.payload.flatInfo,
-      );
+      state.favoriteFlat = addFlatToFavorite(state.favoriteFlat, action.payload.flatInfo);
 
-      return {...state};
+      return { ...state };
 
     case FAVOURITE_FLAT.REMOVE_FLAT_FROM_FAVORITE:
-      state.favoriteFlat = removeFlatFromFavorite(
-        state.favoriteFlat,
-        action.payload.flatInfo,
-      );
+      state.favoriteFlat = removeFlatFromFavorite(state.favoriteFlat, action.payload.flatInfo);
 
-      return {...state};
+      return { ...state };
 
     default:
       return state;

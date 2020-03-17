@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
-import {ScrollView, RefreshControl} from 'react-native';
+import React, { Component } from 'react';
+import { ScrollView, RefreshControl } from 'react-native';
 
 import FlatCategoryCardView from '../../components/flatCategoryCardView/FlatCategoryCardView';
 import FlatCardCarousel from '../../components/flatCardCarousel/FlatCardCarousel';
 import withConnect from '../../hoc/withConnect';
 import styles from './styles';
 export class Discover extends Component {
-  _renderItem({item, index}) {
+  _renderItem({ item, index }) {
     return (
       <FlatCategoryCardView
         flatInfo={item}
@@ -24,11 +24,9 @@ export class Discover extends Component {
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         refreshControl={
-          <RefreshControl
-            refreshing={this.props.flat.isLoading}
-            onRefresh={this.props.flatInfoRequest}
-          />
-        }>
+          <RefreshControl refreshing={this.props.flat.isLoading} onRefresh={this.props.flatInfoRequest} />
+        }
+      >
         <FlatCardCarousel
           title={'Best Picks'}
           flatData={this.props.flat.response}

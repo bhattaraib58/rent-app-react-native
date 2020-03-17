@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,14 +10,14 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     fontWeight: '300',
 
-    paddingVertical: 10,
+    paddingVertical: 10
   },
   foucsStyle: {
-    borderBottomColor: '#324F80',
+    borderBottomColor: '#324F80'
   },
   blurStyle: {
-    borderBottomColor: '#e6e6e6',
-  },
+    borderBottomColor: '#e6e6e6'
+  }
 });
 
 export default styles;

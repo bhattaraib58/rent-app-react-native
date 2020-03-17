@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
-import auth, {firebase} from '@react-native-firebase/auth';
+import React, { Component } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import auth, { firebase } from '@react-native-firebase/auth';
 
 export class Example extends Component {
   logoutUser() {

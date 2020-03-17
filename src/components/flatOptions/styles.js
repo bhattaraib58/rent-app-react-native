@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {selectedTextColor} from '../../constants/color';
+import { StyleSheet } from 'react-native';
+import { selectedTextColor } from '../../constants/color';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,18 +10,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    marginBottom: 10,
+    marginBottom: 10
   },
   buttonStyle: {
     minWidth: 220,
-    backgroundColor: selectedTextColor,
+    backgroundColor: selectedTextColor
   },
   buttonTextStyle: {
-    color: '#FFFFFF',
+    color: '#FFFFFF'
   },
   normalButtonStyle: {
-    minWidth: 220,
-  },
+    minWidth: 220
+  }
 });
 
 export default styles;

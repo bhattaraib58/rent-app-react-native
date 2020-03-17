@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {View, Keyboard} from 'react-native';
-import {SearchBar} from 'react-native-elements';
+import React, { Component } from 'react';
+import { View, Keyboard } from 'react-native';
+import { SearchBar } from 'react-native-elements';
 
 import FlatListView from '../../components/flatListView/FlatListView';
 import withConnect from '../../hoc/withConnect';
@@ -11,19 +11,17 @@ export class Nearby extends Component {
     super(props);
 
     this.state = {
-      search: '',
+      search: ''
     };
   }
 
   updateSearch(search) {
-    this.setState({search});
+    this.setState({ search });
   }
 
   render() {
     return (
-      <View
-        style={styles.mainContainer}
-        onStartShouldSetResponder={() => Keyboard.dismiss()}>
+      <View style={styles.mainContainer} onStartShouldSetResponder={() => Keyboard.dismiss()}>
         <SearchBar
           placeholder="Type address, city, postal"
           containerStyle={styles.searchBar}

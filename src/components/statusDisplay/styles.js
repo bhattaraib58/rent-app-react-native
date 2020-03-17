@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   messageContainer: {
@@ -6,19 +6,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 10,
-    paddingVertical: 15,
+    paddingVertical: 15
   },
   messageText: {
     color: 'white',
     fontSize: 18,
-    lineHeight: 20,
+    lineHeight: 20
   },
   error: {
-    backgroundColor: 'red',
+    backgroundColor: 'red'
   },
   success: {
-    backgroundColor: 'green',
-  },
+    backgroundColor: 'green'
+  }
 });
 
 export default styles;

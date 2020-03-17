@@ -1,4 +1,4 @@
-import {createStackNavigator} from 'react-navigation-stack';
+import { createStackNavigator } from 'react-navigation-stack';
 
 import FlatImageCarousel from '../screen/flatImageCarousel/FlatImageCarousel';
 import FlatDetails from '../screen/flatDetails/FlatDetails';
@@ -9,28 +9,28 @@ const NearbyStack = createStackNavigator({
   Nearby: {
     screen: Nearby,
     navigationOptions: {
-      header: null,
-    },
+      header: null
+    }
   },
   FlatDetails: {
     screen: FlatDetails,
     navigationOptions: {
       headerBackTitle: 'Back',
-      headerTitle: 'Flat Details',
-    },
+      headerTitle: 'Flat Details'
+    }
   },
   MapboxView: {
     screen: MapboxView,
     navigationOptions: {
-      headerTitle: 'Map View',
-    },
+      headerTitle: 'Map View'
+    }
   },
   FlatImageCarousel: {
     screen: FlatImageCarousel,
     navigationOptions: {
-      headerTitle: 'Flat Images',
-    },
-  },
+      headerTitle: 'Flat Images'
+    }
+  }
 });
 
 export default NearbyStack;

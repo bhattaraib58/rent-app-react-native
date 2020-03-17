@@ -1,10 +1,17 @@
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import styles from './styles';
 
-export default function FlatRating({transport, safety, ecology}) {
+/**
+ * Flat Rating Component.
+ *
+ * @param {*} Props { transport, safety, ecology }.
+ * @returns
+ */
+function FlatRating({ transport, safety, ecology }) {
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>
@@ -22,3 +29,11 @@ export default function FlatRating({transport, safety, ecology}) {
     </View>
   );
 }
+
+FlatRating.propTypes = {
+  transport: PropTypes.number.isRequired,
+  safety: PropTypes.number.isRequired,
+  ecology: PropTypes.number.isRequired
+};
+
+export default FlatRating;

@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {View, Dimensions, Image, FlatList} from 'react-native';
+import React, { Component } from 'react';
+import { View, Dimensions, Image, FlatList } from 'react-native';
 
 import styles from './styles';
 
@@ -8,7 +8,7 @@ export class FlatImageCarousel extends Component {
     super(props);
 
     this.state = {
-      currentIndex: 0,
+      currentIndex: 0
     };
 
     this.flatImages = this.props.navigation.getParam('flatImages');
@@ -17,28 +17,26 @@ export class FlatImageCarousel extends Component {
     this.slideIndicatorIcon = this.slideIndicatorIcon.bind(this);
   }
 
-  _renderItem({item}) {
-    return <Image source={{uri: item}} style={styles.image} />;
+  _renderItem({ item }) {
+    return <Image source={{ uri: item }} style={styles.image} />;
   }
 
-  _onViewableItemsChanged({viewableItems, changed}) {
+  _onViewableItemsChanged({ viewableItems, changed }) {
     if (viewableItems[0].isViewable) {
       this.setState({
-        currentIndex: viewableItems[0].key,
+        currentIndex: viewableItems[0].key
       });
     }
   }
 
   _viewabilityConfig = {
-    itemVisiblePercentThreshold: 50,
+    itemVisiblePercentThreshold: 50
   };
 
   slideIndicatorIcon(index) {
-    let activeIndexIndicator =
-      index == this.state.currentIndex ? styles.activeIndicator : {};
-    return (
-      <View style={[styles.indicator, activeIndexIndicator]} key={index}></View>
-    );
+    const activeIndexIndicator = index == this.state.currentIndex ? styles.activeIndicator : {};
+
+    return <View style={[styles.indicator, activeIndexIndicator]} key={index}></View>;
   }
 
   slideIndicator() {
