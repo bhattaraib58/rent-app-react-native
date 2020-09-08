@@ -1,6 +1,6 @@
 {
-  "name": "RentApp",
-  "version": "0.0.1",
+  "name": "rent-app",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "react-native start",
@@ -9,8 +9,8 @@
     "eslint:fix": "eslint --fix src",
     "lint": "yarn prettier && yarn eslint",
     "lint:fix": "yarn prettier:fix && yarn eslint:fix",
-    "prettier": "prettier \"{src,api}/**/*.js\" \"{src,api}/**/*.jsx\"",
-    "prettier:fix": "prettier --write \"{src,api}/**/*.js\" \"{src,api}/**/*.jsx\"",
+    "prettier": "prettier --list-different \"{src,api}/**/*.js\" \"{src,api}/**/*.{md,yml,yml,json,css}\" --loglevel warn",
+    "prettier:fix": "prettier --write \"{src,api}/**/*.js\" \"{src,api}/**/*.{md,yml,yml,json,css}\" --loglevel warn",
     "run-dev": "ENVFILE=.env.development react-native run-android",
     "run-prod": "ENVFILE=.env.production react-native run-android",
     "run-qa": "ENVFILE=.env.qa react-native run-android",
